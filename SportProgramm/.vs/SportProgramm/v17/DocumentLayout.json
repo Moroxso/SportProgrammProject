@@ -3,12 +3,60 @@
   "WorkspaceRootPath": "C:\\Users\\user\\Documents\\GitHub\\SportProgrammProject\\SportProgramm\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A613E344-14FD-4CB9-A7C4-3B1217E1590B}|SportProgramm.csproj|c:\\users\\user\\documents\\github\\sportprogrammproject\\sportprogramm\\pages\\home.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A613E344-14FD-4CB9-A7C4-3B1217E1590B}|SportProgramm.csproj|solutionrelative:pages\\home.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A613E344-14FD-4CB9-A7C4-3B1217E1590B}|SportProgramm.csproj|c:\\users\\user\\documents\\github\\sportprogrammproject\\sportprogramm\\pages\\home.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A613E344-14FD-4CB9-A7C4-3B1217E1590B}|SportProgramm.csproj|solutionrelative:pages\\home.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A613E344-14FD-4CB9-A7C4-3B1217E1590B}|SportProgramm.csproj|c:\\users\\user\\documents\\github\\sportprogrammproject\\sportprogramm\\pages\\adminpanel.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A613E344-14FD-4CB9-A7C4-3B1217E1590B}|SportProgramm.csproj|solutionrelative:pages\\adminpanel.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A613E344-14FD-4CB9-A7C4-3B1217E1590B}|SportProgramm.csproj|c:\\users\\user\\documents\\github\\sportprogrammproject\\sportprogramm\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A613E344-14FD-4CB9-A7C4-3B1217E1590B}|SportProgramm.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A613E344-14FD-4CB9-A7C4-3B1217E1590B}|SportProgramm.csproj|c:\\users\\user\\documents\\github\\sportprogrammproject\\sportprogramm\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{A613E344-14FD-4CB9-A7C4-3B1217E1590B}|SportProgramm.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A613E344-14FD-4CB9-A7C4-3B1217E1590B}|SportProgramm.csproj|c:\\users\\user\\documents\\github\\sportprogrammproject\\sportprogramm\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A613E344-14FD-4CB9-A7C4-3B1217E1590B}|SportProgramm.csproj|solutionrelative:app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A613E344-14FD-4CB9-A7C4-3B1217E1590B}|SportProgramm.csproj|c:\\users\\user\\documents\\github\\sportprogrammproject\\sportprogramm\\pages\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A613E344-14FD-4CB9-A7C4-3B1217E1590B}|SportProgramm.csproj|solutionrelative:pages\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A613E344-14FD-4CB9-A7C4-3B1217E1590B}|SportProgramm.csproj|c:\\users\\user\\documents\\github\\sportprogrammproject\\sportprogramm\\pages\\registration.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A613E344-14FD-4CB9-A7C4-3B1217E1590B}|SportProgramm.csproj|solutionrelative:pages\\registration.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A613E344-14FD-4CB9-A7C4-3B1217E1590B}|SportProgramm.csproj|c:\\users\\user\\documents\\github\\sportprogrammproject\\sportprogramm\\scripts\\databaseconnect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A613E344-14FD-4CB9-A7C4-3B1217E1590B}|SportProgramm.csproj|solutionrelative:scripts\\databaseconnect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A613E344-14FD-4CB9-A7C4-3B1217E1590B}|SportProgramm.csproj|c:\\users\\user\\documents\\github\\sportprogrammproject\\sportprogramm\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A613E344-14FD-4CB9-A7C4-3B1217E1590B}|SportProgramm.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A613E344-14FD-4CB9-A7C4-3B1217E1590B}|SportProgramm.csproj|c:\\users\\user\\documents\\github\\sportprogrammproject\\sportprogramm\\basedate\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{A613E344-14FD-4CB9-A7C4-3B1217E1590B}|SportProgramm.csproj|solutionrelative:basedate\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A613E344-14FD-4CB9-A7C4-3B1217E1590B}|SportProgramm.csproj|c:\\users\\user\\documents\\github\\sportprogrammproject\\sportprogramm\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A613E344-14FD-4CB9-A7C4-3B1217E1590B}|SportProgramm.csproj|solutionrelative:app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A613E344-14FD-4CB9-A7C4-3B1217E1590B}|SportProgramm.csproj|c:\\users\\user\\documents\\github\\sportprogrammproject\\sportprogramm\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A613E344-14FD-4CB9-A7C4-3B1217E1590B}|SportProgramm.csproj|solutionrelative:packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A613E344-14FD-4CB9-A7C4-3B1217E1590B}|SportProgramm.csproj|c:\\users\\user\\documents\\github\\sportprogrammproject\\sportprogramm\\pages\\login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A613E344-14FD-4CB9-A7C4-3B1217E1590B}|SportProgramm.csproj|solutionrelative:pages\\login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +66,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,7 +82,97 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\SportProgrammProject\\SportProgramm\\App.xaml",
+              "RelativeDocumentMoniker": "App.xaml",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\SportProgrammProject\\SportProgramm\\App.xaml",
+              "RelativeToolTip": "App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-23T13:27:50.934Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "App.config",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\SportProgrammProject\\SportProgramm\\App.config",
+              "RelativeDocumentMoniker": "App.config",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\SportProgrammProject\\SportProgramm\\App.config",
+              "RelativeToolTip": "App.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-09-23T13:18:26.016Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "packages.config",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\SportProgrammProject\\SportProgramm\\packages.config",
+              "RelativeDocumentMoniker": "packages.config",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\SportProgrammProject\\SportProgramm\\packages.config",
+              "RelativeToolTip": "packages.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-09-23T13:18:21.007Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\SportProgrammProject\\SportProgramm\\App.xaml.cs",
+              "RelativeDocumentMoniker": "App.xaml.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\SportProgrammProject\\SportProgramm\\App.xaml.cs",
+              "RelativeToolTip": "App.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T13:17:59.951Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DataBaseConnect.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\SportProgrammProject\\SportProgramm\\Scripts\\DataBaseConnect.cs",
+              "RelativeDocumentMoniker": "Scripts\\DataBaseConnect.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\SportProgrammProject\\SportProgramm\\Scripts\\DataBaseConnect.cs",
+              "RelativeToolTip": "Scripts\\DataBaseConnect.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T13:09:54.942Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Login.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\SportProgrammProject\\SportProgramm\\Pages\\Login.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\Login.xaml.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\SportProgrammProject\\SportProgramm\\Pages\\Login.xaml.cs",
+              "RelativeToolTip": "Pages\\Login.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T13:08:55.225Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Home.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\SportProgrammProject\\SportProgramm\\Pages\\Home.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\Home.xaml.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\SportProgrammProject\\SportProgramm\\Pages\\Home.xaml.cs",
+              "RelativeToolTip": "Pages\\Home.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T13:08:36.942Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\SportProgrammProject\\SportProgramm\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
@@ -46,16 +184,76 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 9,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\SportProgrammProject\\SportProgramm\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\SportProgrammProject\\SportProgramm\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-23T11:38:00.975Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Home.xaml",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\SportProgrammProject\\SportProgramm\\Pages\\Home.xaml",
+              "RelativeDocumentMoniker": "Pages\\Home.xaml",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\SportProgrammProject\\SportProgramm\\Pages\\Home.xaml",
+              "RelativeToolTip": "Pages\\Home.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-23T12:02:46.891Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Login.xaml",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\SportProgrammProject\\SportProgramm\\Pages\\Login.xaml",
+              "RelativeDocumentMoniker": "Pages\\Login.xaml",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\SportProgrammProject\\SportProgramm\\Pages\\Login.xaml",
+              "RelativeToolTip": "Pages\\Login.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-23T12:03:03.988Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Registration.xaml",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\SportProgrammProject\\SportProgramm\\Pages\\Registration.xaml",
+              "RelativeDocumentMoniker": "Pages\\Registration.xaml",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\SportProgrammProject\\SportProgramm\\Pages\\Registration.xaml",
+              "RelativeToolTip": "Pages\\Registration.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-23T12:03:21.678Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AdminPanel.xaml",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\SportProgrammProject\\SportProgramm\\Pages\\AdminPanel.xaml",
+              "RelativeDocumentMoniker": "Pages\\AdminPanel.xaml",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\SportProgrammProject\\SportProgramm\\Pages\\AdminPanel.xaml",
+              "RelativeToolTip": "Pages\\AdminPanel.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-23T12:03:36.013Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Model1.edmx [Diagram1]",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\SportProgrammProject\\SportProgramm\\BaseDate\\Model1.edmx",
+              "RelativeDocumentMoniker": "BaseDate\\Model1.edmx",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\SportProgrammProject\\SportProgramm\\BaseDate\\Model1.edmx [Diagram1]",
+              "RelativeToolTip": "BaseDate\\Model1.edmx [Diagram1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
+              "WhenOpened": "2025-09-23T11:59:08.463Z",
+              "EditorCaption": " [Diagram1]"
             },
             {
               "$type": "Bookmark",

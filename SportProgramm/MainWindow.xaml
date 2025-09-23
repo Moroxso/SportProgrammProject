@@ -5,8 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SportProgramm"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow" Width="1920" Height="1080">
+    <StackPanel>
+        <Border Style="{StaticResource ShadowBorder}">
+            <StackPanel Orientation="Horizontal" Height="80">
+
+                <Button Style="{StaticResource UIButton}" Height="30" Width="120" Margin="5" Content="Knopka"/>
+                <Button Style="{StaticResource UIButton}" Height="30" Width="120" Margin="5" Content="Knopka"/>
+                <Button Style="{StaticResource UIButton}" Height="30" Width="120" Margin="5" Content="Knopka"/>
+                <Button Style="{StaticResource UIButton}" Height="30" Width="120" Margin="5" Content="Knopka"/>
+            </StackPanel>
+        </Border>
+        <Frame x:Name="FrmMain"  Height="1014" NavigationUIVisibility="Hidden"/>
+    </StackPanel>
 </Window>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SportProgramm.Scripts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SportProgramm.Pages;
+using SportProgramm.BaseDate;
+
 
 namespace SportProgramm
 {
@@ -23,6 +27,10 @@ namespace SportProgramm
         public MainWindow()
         {
             InitializeComponent();
+            AppConnect.model0db = new SportProgrammProjectEntities();
+            AppFrame.frameMain = FrmMain;
+
+            FrmMain.Navigate(new Home());
         }
     }
 }
