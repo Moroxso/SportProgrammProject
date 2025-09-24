@@ -5,10 +5,28 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:SportProgramm.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="1014" d:DesignWidth="1920"
       Title="Login">
 
     <Grid>
-        
+
+        <StackPanel Width="350"  HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 160 0 0">
+            <Border Style="{StaticResource ShadowBorderTwo}" >
+                <StackPanel Margin="0 20 0 0">
+                    <StackPanel>
+                        <Image Source="\Resources\Logo.png" Width="60" ></Image>
+                    </StackPanel>
+                    <TextBlock Margin="25 15 10 10">Введите Логин:</TextBlock>
+                    <TextBox Margin="20 0 20 5" Padding="3" ></TextBox>
+                    <TextBlock Margin="25 10 10 10">Введите Пароль:</TextBlock>
+                    <PasswordBox Margin="20 0 20 35" Padding="3"></PasswordBox>
+                    <StackPanel Orientation="Horizontal" Margin="0 0 0 20">
+                        <Button Width="200" Height="40" Margin="20 10 0 10" HorizontalAlignment="Left" Style="{StaticResource UIButton}">Войти</Button>
+                        <Button Width="100" Height="40" Margin="8 10 0 10" HorizontalAlignment="Right" Style="{StaticResource UIButton}">Регистрация</Button>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+        </StackPanel>
     </Grid>
 </Page>

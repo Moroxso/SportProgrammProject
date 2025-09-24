@@ -29,3 +29,7 @@ C:\Users\user\Documents\GitHub\SportProgrammProject\SportProgramm\obj\Debug\Spor
 C:\Users\user\Documents\GitHub\SportProgrammProject\SportProgramm\obj\Debug\SportProgramm.exe
 C:\Users\user\Documents\GitHub\SportProgrammProject\SportProgramm\obj\Debug\SportProgramm.pdb
 C:\Users\user\Documents\GitHub\SportProgrammProject\SportProgramm\obj\Debug\App.baml
+C:\Users\user\Documents\GitHub\SportProgrammProject\SportProgramm\obj\Debug\Pages\RatingOfSportsMans.g.cs
+C:\Users\user\Documents\GitHub\SportProgrammProject\SportProgramm\obj\Debug\Pages\Tournaments.g.cs
+C:\Users\user\Documents\GitHub\SportProgrammProject\SportProgramm\obj\Debug\Pages\RatingOfSportsMans.baml
+C:\Users\user\Documents\GitHub\SportProgrammProject\SportProgramm\obj\Debug\Pages\Tournaments.baml

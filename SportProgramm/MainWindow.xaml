@@ -4,16 +4,24 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SportProgramm"
+        Icon="Resources\Logo.png"
         mc:Ignorable="d"
-        Title="MainWindow" Width="1920" Height="1080">
+        WindowState="Maximized"
+        WindowStyle="SingleBorderWindow"
+        Title="SportPedia" Width="1920" Height="1080">
+        
     <StackPanel>
         <Border Style="{StaticResource ShadowBorder}">
-            <StackPanel Orientation="Horizontal" Height="80">
+            <StackPanel Orientation="Horizontal" Height="100">
 
-                <Button Style="{StaticResource UIButton}" Height="30" Width="120" Margin="5" Content="Knopka"/>
-                <Button Style="{StaticResource UIButton}" Height="30" Width="120" Margin="5" Content="Knopka"/>
-                <Button Style="{StaticResource UIButton}" Height="30" Width="120" Margin="5" Content="Knopka"/>
-                <Button Style="{StaticResource UIButton}" Height="30" Width="120" Margin="5" Content="Knopka"/>
+                <StackPanel>
+                    <Image Source="Resources\Logo.png" Height="80" Width="80" Margin="10" />
+                </StackPanel>
+                <Button Style="{StaticResource UIButton}" Height="40" Width="120" Margin="10 0 0 0" Content="Домашняя" Click="ButtonHome"/>
+                <Button Style="{StaticResource UIButton}" Height="40" Width="120" Margin="10 0 0 0" Content="Турниры" Click="ButtonTournaments"/>
+                <Button Style="{StaticResource UIButton}" Height="40" Width="120" Margin="10 0 0 0" Content="Топ Спортсменов"/>
+                <Button Style="{StaticResource UIButton}" Height="40" Width="120" Margin="1150 0 0 0" Content="Войти" Click="ButtonLogin" />
+                <Button Style="{StaticResource UIButton}" Height="40" Width="120" Margin="20 0 0 0" Content="Регистрация" Click="ButtonRegistrator" />
             </StackPanel>
         </Border>
         <Frame x:Name="FrmMain"  Height="1014" NavigationUIVisibility="Hidden"/>

@@ -32,5 +32,25 @@ namespace SportProgramm
 
             FrmMain.Navigate(new Home());
         }
+
+        private void ButtonLogin(object sender, RoutedEventArgs e)
+        {
+            FrmMain.Navigate(new Login());
+        }
+
+        private void ButtonRegistrator(object sender, RoutedEventArgs e)
+        {
+            FrmMain.Navigate(new Registration());
+        }
+
+        private void ButtonHome(object sender, RoutedEventArgs e)
+        {
+            FrmMain.Navigate(new Home());
+        }
+
+        private void ButtonTournaments(object sender, RoutedEventArgs e)
+        {
+            FrmMain.Navigate(new Tournaments());
+        }
     }
 }
