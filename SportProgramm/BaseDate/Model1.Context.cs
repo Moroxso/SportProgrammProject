@@ -27,8 +27,8 @@ namespace SportProgramm.BaseDate
     
         public virtual DbSet<Cup> Cup { get; set; }
         public virtual DbSet<Roles> Roles { get; set; }
-        public virtual DbSet<Sport> Sport { get; set; }
-        public virtual DbSet<Sportsman> Sportsman { get; set; }
+        public virtual DbSet<Sportman> Sportman { get; set; }
+        public virtual DbSet<Sports> Sports { get; set; }
         public virtual DbSet<Users> Users { get; set; }
     }
 }

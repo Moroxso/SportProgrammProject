@@ -12,12 +12,19 @@ namespace SportProgramm.BaseDate
     using System;
     using System.Collections.Generic;
     
-    public partial class Sportsman
+    public partial class Sportman
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public System.DateTime Year { get; set; }
+        public System.DateTime Date { get; set; }
         public string Team { get; set; }
-        public string LvL { get; set; }
+        public string Lvl { get; set; }
+        public int IdSport_1 { get; set; }
+        public Nullable<int> IdSport_2 { get; set; }
+        public Nullable<int> IdSport_3 { get; set; }
+        public Nullable<int> IdSport_4 { get; set; }
+        public Nullable<int> IdSport_5 { get; set; }
+    
+        public virtual Sports Sports { get; set; }
     }
 }

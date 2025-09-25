@@ -52,5 +52,10 @@ namespace SportProgramm
         {
             FrmMain.Navigate(new Tournaments());
         }
+
+        private void ButtonTop(object sender, RoutedEventArgs e)
+        {
+            FrmMain.Navigate(new RatingOfSportsMans());
+        }
     }
 }

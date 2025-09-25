@@ -4,52 +4,58 @@
     <EntitySetMapping Name="Cup">
       <EntityTypeMapping TypeName="SportProgrammProjectModel.Cup">
         <MappingFragment StoreEntitySet="Cup">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Score" ColumnName="Score" />
-          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="IdSport" ColumnName="IdSport" />
           <ScalarProperty Name="Place" ColumnName="Place" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Roles">
       <EntityTypeMapping TypeName="SportProgrammProjectModel.Roles">
         <MappingFragment StoreEntitySet="Roles">
-          <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Sport">
-      <EntityTypeMapping TypeName="SportProgrammProjectModel.Sport">
-        <MappingFragment StoreEntitySet="Sport">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Unit" ColumnName="Unit" />
-          <ScalarProperty Name="Record" ColumnName="Record" />
-          <ScalarProperty Name="Date" ColumnName="Date" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Sportsman">
-      <EntityTypeMapping TypeName="SportProgrammProjectModel.Sportsman">
-        <MappingFragment StoreEntitySet="Sportsman">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Year" ColumnName="Year" />
+    <EntitySetMapping Name="Sportman">
+      <EntityTypeMapping TypeName="SportProgrammProjectModel.Sportman">
+        <MappingFragment StoreEntitySet="Sportman">
+          <ScalarProperty Name="IdSport_5" ColumnName="IdSport_5" />
+          <ScalarProperty Name="IdSport_4" ColumnName="IdSport_4" />
+          <ScalarProperty Name="IdSport_3" ColumnName="IdSport_3" />
+          <ScalarProperty Name="IdSport_2" ColumnName="IdSport_2" />
+          <ScalarProperty Name="IdSport_1" ColumnName="IdSport_1" />
+          <ScalarProperty Name="Lvl" ColumnName="Lvl" />
           <ScalarProperty Name="Team" ColumnName="Team" />
-          <ScalarProperty Name="LvL" ColumnName="LvL" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sports">
+      <EntityTypeMapping TypeName="SportProgrammProjectModel.Sports">
+        <MappingFragment StoreEntitySet="Sports">
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Record" ColumnName="Record" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Users">
       <EntityTypeMapping TypeName="SportProgrammProjectModel.Users">
         <MappingFragment StoreEntitySet="Users">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Login" ColumnName="Login" />
-          <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="IdRole" ColumnName="IdRole" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

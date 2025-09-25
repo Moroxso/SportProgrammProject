@@ -9,7 +9,6 @@
       Title="Login">
 
     <Grid>
-
         <StackPanel Width="350"  HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 160 0 0">
             <Border Style="{StaticResource ShadowBorderTwo}" >
                 <StackPanel Margin="0 20 0 0">
@@ -22,11 +21,10 @@
                     <PasswordBox Margin="20 0 20 35" Padding="3"></PasswordBox>
                     <StackPanel Orientation="Horizontal" Margin="0 0 0 20">
                         <Button Width="200" Height="40" Margin="20 10 0 10" HorizontalAlignment="Left" Style="{StaticResource UIButton}">Войти</Button>
-                        <Button Width="100" Height="40" Margin="8 10 0 10" HorizontalAlignment="Right" Style="{StaticResource UIButton}">Регистрация</Button>
+                        <Button Width="100" Height="40" Margin="8 10 0 10" HorizontalAlignment="Right" Style="{StaticResource UIButton}" Click="ButtonRegistrator">Регистрация</Button>
                     </StackPanel>
                 </StackPanel>
             </Border>
-
         </StackPanel>
     </Grid>
 </Page>

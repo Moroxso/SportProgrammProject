@@ -24,7 +24,7 @@
                     <PasswordBox Margin="20 0 20 35" Padding="3"></PasswordBox>
                     <StackPanel Orientation="Horizontal" Margin="0 0 0 20">
                         <Button Width="200" Height="40" Margin="20 10 0 10" HorizontalAlignment="Left" Style="{StaticResource UIButton}">Регистрация</Button>
-                        <Button Width="100" Height="40" Margin="8 10 0 10" HorizontalAlignment="Right" Style="{StaticResource UIButton}">Назад</Button>
+                        <Button Width="100" Height="40" Margin="8 10 0 10" HorizontalAlignment="Right" Style="{StaticResource UIButton}" Click="ButtonEsc">Назад</Button>
                     </StackPanel>
                 </StackPanel>
             </Border>

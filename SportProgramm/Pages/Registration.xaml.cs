@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SportProgramm.Scripts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,11 @@ namespace SportProgramm.Pages
         public Registration()
         {
             InitializeComponent();
+        }
+
+        private void ButtonEsc(object sender, RoutedEventArgs e)
+        {
+            AppFrame.frameMain.GoBack();
         }
     }
 }

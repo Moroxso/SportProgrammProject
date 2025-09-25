@@ -12,12 +12,24 @@ namespace SportProgramm.BaseDate
     using System;
     using System.Collections.Generic;
     
-    public partial class Sport
+    public partial class Sports
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Sports()
+        {
+            this.Cup = new HashSet<Cup>();
+            this.Sportman = new HashSet<Sportman>();
+        }
+    
         public int Id { get; set; }
         public string Name { get; set; }
         public string Unit { get; set; }
         public string Record { get; set; }
         public System.DateTime Date { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Cup> Cup { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Sportman> Sportman { get; set; }
     }
 }

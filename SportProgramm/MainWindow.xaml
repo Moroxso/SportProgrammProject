@@ -9,21 +9,48 @@
         WindowState="Maximized"
         WindowStyle="SingleBorderWindow"
         Title="SportPedia" Width="1920" Height="1080">
-        
-    <StackPanel>
-        <Border Style="{StaticResource ShadowBorder}">
-            <StackPanel Orientation="Horizontal" Height="100">
 
-                <StackPanel>
-                    <Image Source="Resources\Logo.png" Height="80" Width="80" Margin="10" />
-                </StackPanel>
-                <Button Style="{StaticResource UIButton}" Height="40" Width="120" Margin="10 0 0 0" Content="Домашняя" Click="ButtonHome"/>
-                <Button Style="{StaticResource UIButton}" Height="40" Width="120" Margin="10 0 0 0" Content="Турниры" Click="ButtonTournaments"/>
-                <Button Style="{StaticResource UIButton}" Height="40" Width="120" Margin="10 0 0 0" Content="Топ Спортсменов"/>
-                <Button Style="{StaticResource UIButton}" Height="40" Width="120" Margin="1150 0 0 0" Content="Войти" Click="ButtonLogin" />
-                <Button Style="{StaticResource UIButton}" Height="40" Width="120" Margin="20 0 0 0" Content="Регистрация" Click="ButtonRegistrator" />
-            </StackPanel>
-        </Border>
-        <Frame x:Name="FrmMain"  Height="1014" NavigationUIVisibility="Hidden"/>
+    <StackPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Border Style="{StaticResource AdaptiveMenuBorder}">
+                <!-- Основной контейнер меню -->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <!-- Лого -->
+                        <ColumnDefinition Width="*"/>
+                        <!-- Навигация -->
+                        <ColumnDefinition Width="Auto"/>
+                        <!-- Кнопки входа -->
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Логотип -->
+                    <Image Grid.Column="0" Source="Resources\Logo.png" Style="{StaticResource AdaptiveLogo}"/>
+
+                    <!-- Навигационные кнопки (центр) -->
+                    <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                        <Button Style="{StaticResource AdaptiveMenuButton}" Content="Домашняя" Click="ButtonHome"/>
+                        <Button Style="{StaticResource AdaptiveMenuButton}" Content="Турниры" Click="ButtonTournaments"/>
+                        <Button Style="{StaticResource AdaptiveMenuButton}" Content="Топ Спортсменов" Click="ButtonTop"/>
+                    </StackPanel>
+
+                    <!-- Кнопки авторизации (справа) -->
+                    <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center" Margin="10 0">
+                        <Button Style="{StaticResource AdaptiveMenuButton}" Content="Войти" Click="ButtonLogin"/>
+                        <Button Style="{StaticResource AdaptiveMenuButton}" Content="Регистрация" Click="ButtonRegistrator"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Grid>
+
+        <!-- Контентная область -->
+        <Frame x:Name="FrmMain" Height="Auto" NavigationUIVisibility="Hidden"/>
     </StackPanel>
+
 </Window>

@@ -34,9 +34,9 @@ namespace SportProgramm.Pages
             try
             {
                 db.Cup.Load();
-                TournamentsGrid.ItemsSource = db.Cup.Local.ToBindingList();
+                TournamentsList.ItemsSource = db.Cup.Local.ToList();
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show($"Ошибка загрузки данных: {ex.Message}");
             }

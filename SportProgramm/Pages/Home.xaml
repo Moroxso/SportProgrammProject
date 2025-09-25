@@ -8,49 +8,125 @@
       d:DesignHeight="1014" d:DesignWidth="1920"
       Title="Home">
 
-    <Grid>
-        <DockPanel Margin="0 50 0 0">
-            <DataGrid x:Name="TournamentsGrid" DockPanel.Dock="Top" AutoGenerateColumns="False"
-                 HeadersVisibility="None" Background="Transparent" BorderThickness="0"
-                 RowHeight="100" IsReadOnly="True">
-                <DataGrid.Resources>
-                    <Style TargetType="DataGridCell">
-                        <Setter Property="BorderThickness" Value="0"/>
-                        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
-                    </Style>
-                </DataGrid.Resources>
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
 
-                <DataGrid.Columns>
-                    <DataGridTemplateColumn Width="*">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <Border Style="{StaticResource TournamentCardStyle}"
->
-                                    <Grid Margin="10">
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="Auto"/>
-                                        </Grid.RowDefinitions>
+            <!-- Заголовок -->
+            <TextBlock Grid.Row="0" Text="Спортивный справочник" 
+                       FontSize="32" FontWeight="Bold" Foreground="#2c3e50"
+                       HorizontalAlignment="Center" Margin="0 0 0 30"/>
 
-                                        <TextBlock Grid.Row="0" Text="{Binding Name}" 
-                                              FontSize="16" FontWeight="Bold"/>
-                                        <TextBlock Grid.Row="1" Text="{Binding Place}" 
-                                              FontSize="12" Foreground="Gray"/>
-                                        <StackPanel Grid.Row="2" Orientation="Horizontal">
-                                            <TextBlock Text="Лучший результат: " FontSize="12"/>
-                                            <TextBlock Text="{Binding Score}" FontSize="12" FontWeight="Bold"/>
-                                        </StackPanel>
-                                        <TextBlock Grid.Row="3" Text="{Binding Date, StringFormat='dd.MM.yyyy'}" 
-                                              FontSize="10" Foreground="DarkGray"/>
-                                    </Grid>
-                                </Border>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-                </DataGrid.Columns>
-            </DataGrid>
-        </DockPanel>
-    </Grid>
+            <!-- Блок 1: Две новости горизонтально -->
+            <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0 0 0 30">
+                <!-- Новость 1 -->
+                <Border Style="{StaticResource HomeSectionStyle}" Width="400" Height="200">
+                    <StackPanel>
+                        <TextBlock Text="Новость #1" Style="{StaticResource SectionTitleStyle}"/>
+                        <TextBlock Text="Запуск нового спортивного сезона" Style="{StaticResource NewsTitleStyle}"/>
+                        <TextBlock Text="Мы рады объявить о начале нового спортивного сезона 2024. В этом году участников ждут новые дисциплины и улучшенная система оценивания." 
+                                   Style="{StaticResource NewsTextStyle}" Margin="0 10 0 0"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Новость 2 -->
+                <Border Style="{StaticResource HomeSectionStyle}" Width="400" Height="200" Margin="20 0 0 0">
+                    <StackPanel>
+                        <TextBlock Text="Новость #2" Style="{StaticResource SectionTitleStyle}"/>
+                        <TextBlock Text="Открытие нового спортивного комплекса" Style="{StaticResource NewsTitleStyle}"/>
+                        <TextBlock Text="В следующем месяце состоится торжественное открытие нового современного спортивного комплекса с оборудованием мирового класса." 
+                                   Style="{StaticResource NewsTextStyle}" Margin="0 10 0 0"/>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+
+            <!-- Блок 2: Турниры и топ спортсменов -->
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="300"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Недавние турниры -->
+                <Border Grid.Column="0" Style="{StaticResource HomeSectionStyle}">
+                    <StackPanel>
+                        <TextBlock Text="Недавние турниры" Style="{StaticResource SectionTitleStyle}"/>
+
+                        <ItemsControl x:Name="RecentTournamentsList">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border Style="{StaticResource CompactTournamentCardStyle}">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <StackPanel Grid.Column="0">
+                                                <TextBlock Text="{Binding Name}" 
+                                                           FontSize="14" FontWeight="SemiBold" Foreground="#2c3e50"/>
+                                                <TextBlock Text="{Binding Place}" 
+                                                           FontSize="11" Foreground="#7f8c8d" Margin="0 2 0 0"/>
+                                            </StackPanel>
+
+                                            <TextBlock Grid.Column="1" Text="{Binding Date, StringFormat='dd.MM.yyyy'}" 
+                                                       FontSize="10" Foreground="#95a5a6" VerticalAlignment="Center"/>
+                                        </Grid>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </StackPanel>
+                </Border>
+
+                <!-- Разделитель -->
+                <Rectangle Grid.Column="1" Width="1" Fill="#E0E0E0" Margin="20 0" VerticalAlignment="Stretch"/>
+
+                <!-- Топ 5 спортсменов -->
+                <Border Grid.Column="2" Style="{StaticResource HomeSectionStyle}">
+                    <StackPanel>
+                        <TextBlock Text="Топ 5 спортсменов" Style="{StaticResource SectionTitleStyle}"/>
+
+                        <ItemsControl x:Name="TopSportsmenList">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border Style="{StaticResource CompactTournamentCardStyle}" Margin="0 0 0 5">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <!-- Ранг -->
+                                            <TextBlock Grid.Column="0" Text="{Binding Rank}" 
+                                                       Style="{StaticResource RankStyle}" FontSize="14" Width="30"/>
+
+                                            <!-- Информация -->
+                                            <StackPanel Grid.Column="1" Margin="5 0">
+                                                <TextBlock Text="{Binding Name}" 
+                                                           FontSize="12" FontWeight="SemiBold" Foreground="#2c3e50"/>
+                                                <TextBlock Text="{Binding Team}" 
+                                                           FontSize="10" Foreground="#7f8c8d"/>
+                                            </StackPanel>
+
+                                            <!-- Уровень -->
+                                            <TextBlock Grid.Column="2" Text="{Binding Lvl}" 
+                                                       FontSize="10" FontWeight="Bold" Foreground="#e74c3c"
+                                                       VerticalAlignment="Center"/>
+                                        </Grid>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </StackPanel>
+                </Border>
+            </Grid>
+        </Grid>
+    </ScrollViewer>
 </Page>

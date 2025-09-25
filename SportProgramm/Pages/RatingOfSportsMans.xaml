@@ -8,7 +8,81 @@
       d:DesignHeight="1014" d:DesignWidth="1920"
       Title="RatingOfSportsMans">
 
-    <Grid>
-        
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Заголовок -->
+        <TextBlock Grid.Row="0" Text="Топ спортсменов" 
+                   FontSize="28" FontWeight="Bold" Foreground="#2c3e50"
+                   Margin="0 0 0 20" HorizontalAlignment="Center"/>
+
+        <!-- Контейнер для списка спортсменов -->
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <ItemsControl x:Name="SportsmenList">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border Style="{StaticResource SportsmanCardStyle}" 
+                                Height="80" Margin="10 5">
+                            <Grid Margin="15 10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <!-- Ранг -->
+                                    <ColumnDefinition Width="*"/>
+                                    <!-- Инфо -->
+                                    <ColumnDefinition Width="Auto"/>
+                                    <!-- Спорты -->
+                                </Grid.ColumnDefinitions>
+
+                                <!-- Ранг -->
+                                <TextBlock Grid.Column="0" 
+                                           Text="{Binding Rank}" 
+                                           Style="{StaticResource RankStyle}"/>
+
+                                <!-- Основная информация -->
+                                <StackPanel Grid.Column="1" Orientation="Vertical" 
+                                            VerticalAlignment="Center" Margin="15 0">
+                                    <TextBlock Text="{Binding Name}" 
+                                               Style="{StaticResource NameStyle}"/>
+                                    <StackPanel Orientation="Horizontal" Margin="0 5 0 0">
+                                        <TextBlock Text="{Binding Team}" 
+                                                   Style="{StaticResource InfoStyle}"/>
+                                        <TextBlock Text=" • " 
+                                                   Style="{StaticResource InfoStyle}"/>
+                                        <TextBlock Text="{Binding Lvl}" 
+                                                   Style="{StaticResource InfoStyle}"/>
+                                        <TextBlock Text=" • " 
+                                                   Style="{StaticResource InfoStyle}"/>
+                                        <TextBlock Text="{Binding Date, StringFormat='dd.MM.yyyy'}" 
+                                                   Style="{StaticResource InfoStyle}"/>
+                                    </StackPanel>
+                                </StackPanel>
+
+                                <!-- Виды спорта -->
+                                <ItemsControl Grid.Column="2" 
+                                              ItemsSource="{Binding Sports}"
+                                              VerticalAlignment="Center">
+                                    <ItemsControl.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <StackPanel Orientation="Horizontal"/>
+                                        </ItemsPanelTemplate>
+                                    </ItemsControl.ItemsPanel>
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Border Style="{StaticResource SportBadgeStyle}">
+                                                <TextBlock Text="{Binding}" 
+                                                           Style="{StaticResource SportTextStyle}"/>
+                                            </Border>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
     </Grid>
 </Page>

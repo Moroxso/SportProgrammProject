@@ -19,5 +19,8 @@ namespace SportProgramm.BaseDate
         public string Score { get; set; }
         public System.DateTime Date { get; set; }
         public string Place { get; set; }
+        public int IdSport { get; set; }
+    
+        public virtual Sports Sports { get; set; }
     }
 }

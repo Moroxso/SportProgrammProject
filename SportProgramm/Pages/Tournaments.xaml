@@ -8,49 +8,83 @@
       d:DesignHeight="1014" d:DesignWidth="1920"
       Title="Tournaments">
 
-    <Grid>
-        <DockPanel Margin="0 50 0 0">
-            <DataGrid x:Name="TournamentsGrid" DockPanel.Dock="Top" AutoGenerateColumns="False"
-                 HeadersVisibility="None" Background="Transparent" BorderThickness="0"
-                 RowHeight="100" IsReadOnly="True">
-                <DataGrid.Resources>
-                    <Style TargetType="DataGridCell">
-                        <Setter Property="BorderThickness" Value="0"/>
-                        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
-                    </Style>
-                </DataGrid.Resources>
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
 
-                <DataGrid.Columns>
-                    <DataGridTemplateColumn Width="*">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <Border Style="{StaticResource TournamentCardStyle}"
->
-                                    <Grid Margin="10">
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="Auto"/>
-                                        </Grid.RowDefinitions>
+        <!-- Заголовок страницы -->
+        <TextBlock Grid.Row="0" Text="Все турниры" 
+                   FontSize="28" FontWeight="Bold" Foreground="#2c3e50"
+                   Margin="0 0 0 20" HorizontalAlignment="Center"/>
 
-                                        <TextBlock Grid.Row="0" Text="{Binding Name}" 
-                                              FontSize="16" FontWeight="Bold"/>
-                                        <TextBlock Grid.Row="1" Text="{Binding Place}" 
-                                              FontSize="12" Foreground="Gray"/>
-                                        <StackPanel Grid.Row="2" Orientation="Horizontal">
-                                            <TextBlock Text="Лучший результат: " FontSize="12"/>
-                                            <TextBlock Text="{Binding Score}" FontSize="12" FontWeight="Bold"/>
-                                        </StackPanel>
-                                        <TextBlock Grid.Row="3" Text="{Binding Date, StringFormat='dd.MM.yyyy'}" 
-                                              FontSize="10" Foreground="DarkGray"/>
-                                    </Grid>
-                                </Border>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-                </DataGrid.Columns>
-            </DataGrid>
-        </DockPanel>
+        <!-- Контейнер для списка турниров с кастомным скроллбаром -->
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Hidden"
+                      HorizontalScrollBarVisibility="Disabled" MaxHeight="840">
+            <ScrollViewer.Resources>
+                <!-- Стиль для минималистичного скроллбара -->
+                <Style TargetType="ScrollBar">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="Width" Value="8"/>
+                    <Style.Triggers>
+                        <Trigger Property="Orientation" Value="Vertical">
+                            <Setter Property="Width" Value="8"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+
+                <!-- Стиль для ползунка скроллбара -->
+                <Style TargetType="Thumb">
+                    <Setter Property="Background" Value="#bdc3c7"/>
+                    <Setter Property="BorderThickness" Value="0"/>
+                </Style>
+            </ScrollViewer.Resources>
+
+            <ItemsControl x:Name="TournamentsList">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border Style="{StaticResource NewsSectionStyle}">
+                            <Grid Margin="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <!-- Название турнира -->
+                                <TextBlock Grid.Row="0" Text="{Binding Name}" 
+                                           FontSize="18" FontWeight="Bold" 
+                                           Foreground="#2c3e50" TextWrapping="Wrap"
+                                           Margin="0 0 0 5"/>
+
+                                <!-- Место проведения -->
+                                <TextBlock Grid.Row="1" Text="{Binding Place}" 
+                                           FontSize="14" Foreground="#7f8c8d"
+                                           Margin="0 0 0 10"/>
+
+                                <!-- Результат - исправленное выравнивание -->
+                                <StackPanel Grid.Row="2" Orientation="Horizontal" 
+                                            VerticalAlignment="Center">
+                                    <TextBlock Text="Лучший результат: " 
+                                               FontSize="12" Foreground="#95a5a6"/>
+                                    <TextBlock Text="{Binding Score}" 
+                                               FontSize="13" FontWeight="SemiBold" 
+                                               Foreground="#e74c3c"/>
+                                </StackPanel>
+
+                                <!-- Дата в правом нижнем углу -->
+                                <TextBlock Text="{Binding Date, StringFormat='dd.MM.yyyy'}" 
+                                           FontSize="11" Foreground="#bdc3c7" 
+                                           FontStyle="Italic"
+                                           HorizontalAlignment="Right" 
+                                           VerticalAlignment="Bottom"
+                                           Margin="0 5 0 0"/>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
     </Grid>
 </Page>

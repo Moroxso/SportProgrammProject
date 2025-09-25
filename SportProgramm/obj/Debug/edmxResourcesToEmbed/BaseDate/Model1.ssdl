@@ -9,6 +9,7 @@
     <Property Name="Score" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Date" Type="date" Nullable="false" />
     <Property Name="Place" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdSport" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Roles">
     <Key>
@@ -17,7 +18,22 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
-  <EntityType Name="Sport">
+  <EntityType Name="Sportman">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Date" Type="date" Nullable="false" />
+    <Property Name="Team" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Lvl" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdSport_1" Type="int" Nullable="false" />
+    <Property Name="IdSport_2" Type="int" />
+    <Property Name="IdSport_3" Type="int" />
+    <Property Name="IdSport_4" Type="int" />
+    <Property Name="IdSport_5" Type="int" />
+  </EntityType>
+  <EntityType Name="Sports">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
@@ -26,16 +42,6 @@
     <Property Name="Unit" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Record" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Date" Type="date" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Sportsman">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Year" Type="date" Nullable="false" />
-    <Property Name="Team" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="LvL" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="Users">
     <Key>
@@ -47,6 +53,30 @@
     <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="IdRole" Type="int" Nullable="false" />
   </EntityType>
+  <Association Name="FK_Cup_Sports">
+    <End Role="Sports" Type="Self.Sports" Multiplicity="1" />
+    <End Role="Cup" Type="Self.Cup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sports">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Cup">
+        <PropertyRef Name="IdSport" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sportman_Sports">
+    <End Role="Sports" Type="Self.Sports" Multiplicity="1" />
+    <End Role="Sportman" Type="Self.Sportman" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sports">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sportman">
+        <PropertyRef Name="IdSport_1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Users_Roles">
     <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
     <End Role="Users" Type="Self.Users" Multiplicity="*" />
@@ -62,9 +92,17 @@
   <EntityContainer Name="Хранилище SportProgrammProjectModelContainer">
     <EntitySet Name="Cup" EntityType="Self.Cup" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Sport" EntityType="Self.Sport" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Sportsman" EntityType="Self.Sportsman" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sportman" EntityType="Self.Sportman" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sports" EntityType="Self.Sports" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Cup_Sports" Association="Self.FK_Cup_Sports">
+      <End Role="Sports" EntitySet="Sports" />
+      <End Role="Cup" EntitySet="Cup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sportman_Sports" Association="Self.FK_Sportman_Sports">
+      <End Role="Sports" EntitySet="Sports" />
+      <End Role="Sportman" EntitySet="Sportman" />
+    </AssociationSet>
     <AssociationSet Name="FK_Users_Roles" Association="Self.FK_Users_Roles">
       <End Role="Roles" EntitySet="Roles" />
       <End Role="Users" EntitySet="Users" />
