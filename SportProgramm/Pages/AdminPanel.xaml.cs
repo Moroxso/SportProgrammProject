@@ -14,6 +14,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SportProgramm.Pages.AdminPanelPages;
+
 
 namespace SportProgramm.Pages
 {
@@ -270,6 +272,49 @@ namespace SportProgramm.Pages
                 }
             }
         }
+
+        private void EditSports_Click(object sender, RoutedEventArgs e)
+        {
+            // Для Page используем NavigationService
+            if (this.Parent is Frame frame)
+            {
+                frame.Navigate(new EditSportsPage());
+            }
+            else
+            {
+                // Если это окно, а не страница
+                var mainWindow = Application.Current.MainWindow as MainWindow;
+                mainWindow?.FrmMain.Navigate(new EditSportsPage());
+            }
+        }
+
+        private void EditTournaments_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.Parent is Frame frame)
+            {
+                frame.Navigate(new EditTournamentsPage());
+            }
+            else
+            {
+                var mainWindow = Application.Current.MainWindow as MainWindow;
+                mainWindow?.FrmMain.Navigate(new EditTournamentsPage());
+            }
+        }
+
+        private void EditSportsmen_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.Parent is Frame frame)
+            {
+                frame.Navigate(new EditSportsmenPage());
+            }
+            else
+            {
+                var mainWindow = Application.Current.MainWindow as MainWindow;
+                mainWindow?.FrmMain.Navigate(new EditSportsmenPage());
+            }
+        }
+
+
     }
 }
     

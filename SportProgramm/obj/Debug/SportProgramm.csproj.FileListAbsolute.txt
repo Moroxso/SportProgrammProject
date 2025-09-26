@@ -69,3 +69,15 @@ C:\Users\ckuzi\Documents\GitHub\SportProgrammProject\SportProgramm\obj\Debug\Spo
 C:\Users\ckuzi\Documents\GitHub\SportProgrammProject\SportProgramm\obj\Debug\SportPro.F7B7A768.Up2Date
 C:\Users\ckuzi\Documents\GitHub\SportProgrammProject\SportProgramm\obj\Debug\SportProgramm.exe
 C:\Users\ckuzi\Documents\GitHub\SportProgrammProject\SportProgramm\obj\Debug\SportProgramm.pdb
+C:\Users\ckuzi\Documents\GitHub\SportProgrammProject\SportProgramm\obj\Debug\Pages\AdminPanelPages\EditSportsmenPage.g.cs
+C:\Users\ckuzi\Documents\GitHub\SportProgrammProject\SportProgramm\obj\Debug\Pages\AdminPanelPages\EditSportsPage.g.cs
+C:\Users\ckuzi\Documents\GitHub\SportProgrammProject\SportProgramm\obj\Debug\Pages\AdminPanelPages\EditTournamentsPage.g.cs
+C:\Users\ckuzi\Documents\GitHub\SportProgrammProject\SportProgramm\obj\Debug\Pages\AdminPanelPages\AddEditSportsmanWindow.g.cs
+C:\Users\ckuzi\Documents\GitHub\SportProgrammProject\SportProgramm\obj\Debug\Pages\AdminPanelPages\AddEditSportWindow.g.cs
+C:\Users\ckuzi\Documents\GitHub\SportProgrammProject\SportProgramm\obj\Debug\Pages\AdminPanelPages\AddEditTournamentWindow.g.cs
+C:\Users\ckuzi\Documents\GitHub\SportProgrammProject\SportProgramm\obj\Debug\Pages\AdminPanelPages\AddEditSportsmanWindow.baml
+C:\Users\ckuzi\Documents\GitHub\SportProgrammProject\SportProgramm\obj\Debug\Pages\AdminPanelPages\AddEditSportWindow.baml
+C:\Users\ckuzi\Documents\GitHub\SportProgrammProject\SportProgramm\obj\Debug\Pages\AdminPanelPages\AddEditTournamentWindow.baml
+C:\Users\ckuzi\Documents\GitHub\SportProgrammProject\SportProgramm\obj\Debug\Pages\AdminPanelPages\EditSportsmenPage.baml
+C:\Users\ckuzi\Documents\GitHub\SportProgrammProject\SportProgramm\obj\Debug\Pages\AdminPanelPages\EditSportsPage.baml
+C:\Users\ckuzi\Documents\GitHub\SportProgrammProject\SportProgramm\obj\Debug\Pages\AdminPanelPages\EditTournamentsPage.baml

@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SportProgramm.Pages"
         mc:Ignorable="d"
+        Icon="\Resources\Logo.png"
         WindowStartupLocation="CenterOwner"
-        Title="AddEditSportsmanWindow" Height="800" Width="700">
+        Title="Добавить спортсмена" Height="870" Width="700">
     <ScrollViewer VerticalScrollBarVisibility="Auto">
         <Border Style="{StaticResource AdminPanelStyle}" Margin="20">
             <StackPanel>
@@ -14,29 +15,29 @@
 
                 <StackPanel Margin="0 20">
                     <TextBlock Text="ФИО спортсмена*" FontWeight="SemiBold" Margin="0 0 0 5"/>
-                    <TextBox x:Name="NameTextBox" Height="35" FontSize="14" Padding="10"/>
+                    <TextBox x:Name="NameTextBox" Height="42" FontSize="14" Padding="10"/>
 
                     <TextBlock Text="Команда*" FontWeight="SemiBold" Margin="0 15 0 5"/>
-                    <TextBox x:Name="TeamTextBox" Height="35" FontSize="14" Padding="10"/>
+                    <TextBox x:Name="TeamTextBox" Height="42" FontSize="14" Padding="10"/>
 
                     <TextBlock Text="Уровень*" FontWeight="SemiBold" Margin="0 15 0 5"/>
-                    <TextBox x:Name="LvlTextBox" Height="35" FontSize="14" Padding="10"/>
+                    <TextBox x:Name="LvlTextBox" Height="42" FontSize="14" Padding="10"/>
 
                     <TextBlock Text="Дата рождения" FontWeight="SemiBold" Margin="0 15 0 5"/>
-                    <DatePicker x:Name="DatePicker" Height="35" FontSize="14"/>
+                    <DatePicker x:Name="DatePicker" Height="42" FontSize="14"/>
 
                     <TextBlock Text="Виды спорта (можно выбрать до 5)" FontWeight="SemiBold" Margin="0 15 0 5"/>
 
                     <StackPanel>
-                        <ComboBox x:Name="Sport1ComboBox" Height="35" FontSize="14" 
+                        <ComboBox x:Name="Sport1ComboBox" Height="42" FontSize="14" 
                                 DisplayMemberPath="Name" Margin="0 5"/>
-                        <ComboBox x:Name="Sport2ComboBox" Height="35" FontSize="14" 
+                        <ComboBox x:Name="Sport2ComboBox" Height="42" FontSize="14" 
                                 DisplayMemberPath="Name" Margin="0 5"/>
-                        <ComboBox x:Name="Sport3ComboBox" Height="35" FontSize="14" 
+                        <ComboBox x:Name="Sport3ComboBox" Height="42" FontSize="14" 
                                 DisplayMemberPath="Name" Margin="0 5"/>
-                        <ComboBox x:Name="Sport4ComboBox" Height="35" FontSize="14" 
+                        <ComboBox x:Name="Sport4ComboBox" Height="42" FontSize="14" 
                                 DisplayMemberPath="Name" Margin="0 5"/>
-                        <ComboBox x:Name="Sport5ComboBox" Height="35" FontSize="14" 
+                        <ComboBox x:Name="Sport5ComboBox" Height="42" FontSize="14" 
                                 DisplayMemberPath="Name" Margin="0 5"/>
                     </StackPanel>
                 </StackPanel>

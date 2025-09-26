@@ -6,23 +6,24 @@
         xmlns:local="clr-namespace:SportProgramm.Pages"
         mc:Ignorable="d"
         WindowStartupLocation="CenterOwner"
-        Title="AddEditSportWindow" Height="450" Width="800">
+        Icon="\Resources\Logo.png"
+        Title="Добавить вид спорта" Height="550" Width="800">
     <Border Style="{StaticResource AdminPanelStyle}" Margin="20">
         <StackPanel>
             <TextBlock Text="Добавить вид спорта" Style="{StaticResource AdminSectionTitle}"/>
 
             <StackPanel Margin="0 20">
                 <TextBlock Text="Название вида спорта*" FontWeight="SemiBold" Margin="0 0 0 5"/>
-                <TextBox x:Name="NameTextBox" Height="35" FontSize="14" Padding="10"/>
+                <TextBox x:Name="NameTextBox" Height="42" FontSize="14" Padding="10"/>
 
                 <TextBlock Text="Единица измерения" FontWeight="SemiBold" Margin="0 15 0 5"/>
-                <TextBox x:Name="UnitTextBox" Height="35" FontSize="14" Padding="10"/>
+                <TextBox x:Name="UnitTextBox" Height="42" FontSize="14" Padding="10"/>
 
                 <TextBlock Text="Рекорд" FontWeight="SemiBold" Margin="0 15 0 5"/>
-                <TextBox x:Name="RecordTextBox" Height="35" FontSize="14" Padding="10"/>
+                <TextBox x:Name="RecordTextBox" Height="42" FontSize="14" Padding="10"/>
 
                 <TextBlock Text="Дата установки рекорда" FontWeight="SemiBold" Margin="0 15 0 5"/>
-                <DatePicker x:Name="DatePicker" Height="35" FontSize="14"/>
+                <DatePicker x:Name="DatePicker" Height="42" FontSize="14"/>
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 20">

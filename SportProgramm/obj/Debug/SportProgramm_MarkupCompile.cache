@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\ckuzi\Documents\GitHub\SportProgrammProject\SportProgramm\App.xaml
-71371839067
+13636251069
 21062490903
-20-255367370
+261118079132
 181212457633
-MainWindow.xaml;Pages\AdminPanel.xaml;Pages\Home.xaml;Pages\Login.xaml;Pages\RatingOfSportsMans.xaml;Pages\Registration.xaml;Pages\Tournaments.xaml;
+MainWindow.xaml;Pages\AdminPanelPages\AddEditSportsmanWindow.xaml;Pages\AdminPanelPages\AddEditSportWindow.xaml;Pages\AdminPanelPages\AddEditTournamentWindow.xaml;Pages\AdminPanel.xaml;Pages\AdminPanelPages\EditSportsmenPage.xaml;Pages\AdminPanelPages\EditSportsPage.xaml;Pages\AdminPanelPages\EditTournamentsPage.xaml;Pages\Home.xaml;Pages\Login.xaml;Pages\RatingOfSportsMans.xaml;Pages\Registration.xaml;Pages\Tournaments.xaml;
 
 False
 

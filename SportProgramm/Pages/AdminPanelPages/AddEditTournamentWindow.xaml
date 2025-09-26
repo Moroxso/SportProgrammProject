@@ -6,26 +6,27 @@
         xmlns:local="clr-namespace:SportProgramm.Pages"
         mc:Ignorable="d"
         WindowStartupLocation="CenterOwner"
-        Title="AddEditTournamentWindow" Height="600" Width="800">
+        Icon="\Resources\Logo.png"
+        Title="Добавить турнир" Height="650" Width="800">
     <Border Style="{StaticResource AdminPanelStyle}" Margin="20">
         <StackPanel>
             <TextBlock Text="Добавить турнир" Style="{StaticResource AdminSectionTitle}"/>
 
             <StackPanel Margin="0 20">
                 <TextBlock Text="Название турнира*" FontWeight="SemiBold" Margin="0 0 0 5"/>
-                <TextBox x:Name="NameTextBox" Height="35" FontSize="14" Padding="10"/>
+                <TextBox x:Name="NameTextBox" Height="42" FontSize="14" Padding="10"/>
 
                 <TextBlock Text="Место проведения*" FontWeight="SemiBold" Margin="0 15 0 5"/>
-                <TextBox x:Name="PlaceTextBox" Height="35" FontSize="14" Padding="10"/>
+                <TextBox x:Name="PlaceTextBox" Height="42" FontSize="14" Padding="10"/>
 
                 <TextBlock Text="Лучший результат" FontWeight="SemiBold" Margin="0 15 0 5"/>
-                <TextBox x:Name="ScoreTextBox" Height="35" FontSize="14" Padding="10"/>
+                <TextBox x:Name="ScoreTextBox" Height="42" FontSize="14" Padding="10"/>
 
                 <TextBlock Text="Дата турнира*" FontWeight="SemiBold" Margin="0 15 0 5"/>
-                <DatePicker x:Name="DatePicker" Height="35" FontSize="14"/>
+                <DatePicker x:Name="DatePicker" Height="42" FontSize="14"/>
 
                 <TextBlock Text="Вид спорта*" FontWeight="SemiBold" Margin="0 15 0 5"/>
-                <ComboBox x:Name="SportComboBox" Height="35" FontSize="14" 
+                <ComboBox x:Name="SportComboBox" Height="42" FontSize="14" 
                           DisplayMemberPath="Name"/>
             </StackPanel>
 
