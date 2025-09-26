@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\user\Documents\GitHub\SportProgrammProject\SportProgramm\obj\Debug\
+C:\Users\ckuzi\Documents\GitHub\SportProgrammProject\SportProgramm\obj\Debug\
 SportProgramm
 none
 false
 DEBUG;TRACE
-C:\Users\user\Documents\GitHub\SportProgrammProject\SportProgramm\App.xaml
-71371839067
+C:\Users\ckuzi\Documents\GitHub\SportProgrammProject\SportProgramm\App.xaml
+10910494416
 21062490903
-211666410751
-18591293693
-MainWindow.xaml;Pages\AdminPanel.xaml;Pages\Home.xaml;Pages\Login.xaml;Pages\RatingOfSportsMans.xaml;Pages\Registration.xaml;Pages\Tournaments.xaml;
+24-1133089266
+181212457633
+MainWindow.xaml;Pages\AddEditSportsmanWindow.xaml;Pages\AddEditSportWindow.xaml;Pages\AddEditTournamentWindow.xaml;Pages\AdminPanel.xaml;Pages\Home.xaml;Pages\Login.xaml;Pages\RatingOfSportsMans.xaml;Pages\Registration.xaml;Pages\Tournaments.xaml;
 
 True
 
