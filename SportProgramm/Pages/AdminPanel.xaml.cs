@@ -66,14 +66,19 @@ namespace SportProgramm.Pages
             var addWindow = new AddEditSportWindow();
             if (addWindow.ShowDialog() == true)
             {
-                LoadData(); // Перезагружаем данные
+                try
+                {
+                    var sport = addWindow.GetSport();
+                    db.Sports.Add(sport);
+                    db.SaveChanges();
+                    LoadData();
+                    MessageBox.Show("Вид спорта успешно добавлен");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка: {ex.Message}");
+                }
             }
-        }
-
-        private void EditSports_Click(object sender, RoutedEventArgs e)
-        {
-            // Переход на страницу редактирования видов спорта
-            NavigationService.Navigate(new EditSportsPage());
         }
 
         private void DeleteSport_Click(object sender, RoutedEventArgs e)
@@ -103,13 +108,19 @@ namespace SportProgramm.Pages
             var addWindow = new AddEditTournamentWindow(db.Sports.ToList());
             if (addWindow.ShowDialog() == true)
             {
-                LoadData();
+                try
+                {
+                    var tournament = addWindow.GetTournament();
+                    db.Cup.Add(tournament);
+                    db.SaveChanges();
+                    LoadData();
+                    MessageBox.Show("Турнир успешно добавлен");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка: {ex.Message}");
+                }
             }
-        }
-
-        private void EditTournaments_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new EditTournamentsPage());
         }
 
         private void EditTournament_Click(object sender, RoutedEventArgs e)
@@ -124,7 +135,25 @@ namespace SportProgramm.Pages
                     var editWindow = new AddEditTournamentWindow(db.Sports.ToList(), tournament);
                     if (editWindow.ShowDialog() == true)
                     {
-                        LoadData();
+                        try
+                        {
+                            var updatedTournament = editWindow.GetTournament();
+
+                            // Обновляем поля
+                            tournament.Name = updatedTournament.Name;
+                            tournament.Place = updatedTournament.Place;
+                            tournament.Score = updatedTournament.Score;
+                            tournament.Date = updatedTournament.Date; // Теперь это строка
+                            tournament.IdSport = updatedTournament.IdSport;
+
+                            db.SaveChanges();
+                            LoadData();
+                            MessageBox.Show("Турнир успешно обновлен");
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Ошибка: {ex.Message}");
+                        }
                     }
                 }
             }
@@ -151,20 +180,26 @@ namespace SportProgramm.Pages
             }
         }
 
-        // Управление спортсменами
         private void AddSportsman_Click(object sender, RoutedEventArgs e)
         {
             var addWindow = new AddEditSportsmanWindow(db.Sports.ToList());
             if (addWindow.ShowDialog() == true)
             {
-                LoadData();
+                try
+                {
+                    var sportsman = addWindow.GetSportsman();
+                    db.Sportman.Add(sportsman);
+                    db.SaveChanges();
+                    LoadData();
+                    MessageBox.Show("Спортсмен успешно добавлен");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка: {ex.Message}");
+                }
             }
         }
 
-        private void EditSportsmen_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new EditSportsmenPage());
-        }
 
         private void EditSportsman_Click(object sender, RoutedEventArgs e)
         {
