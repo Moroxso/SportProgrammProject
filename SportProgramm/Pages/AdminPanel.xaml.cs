@@ -188,6 +188,14 @@ namespace SportProgramm.Pages
                 try
                 {
                     var sportsman = addWindow.GetSportsman();
+
+                    // Проверяем, что основной вид спорта выбран
+                    if (sportsman.IdSport_1 == 0)
+                    {
+                        MessageBox.Show("Выберите основной вид спорта");
+                        return;
+                    }
+
                     db.Sportman.Add(sportsman);
                     db.SaveChanges();
                     LoadData();
@@ -199,7 +207,6 @@ namespace SportProgramm.Pages
                 }
             }
         }
-
 
         private void EditSportsman_Click(object sender, RoutedEventArgs e)
         {
@@ -213,7 +220,31 @@ namespace SportProgramm.Pages
                     var editWindow = new AddEditSportsmanWindow(db.Sports.ToList(), sportsman);
                     if (editWindow.ShowDialog() == true)
                     {
-                        LoadData();
+                        try
+                        {
+                            var updatedSportsman = editWindow.GetSportsman();
+
+                            // Обновляем поля
+                            sportsman.Name = updatedSportsman.Name;
+                            sportsman.Team = updatedSportsman.Team;
+                            sportsman.Lvl = updatedSportsman.Lvl;
+                            sportsman.Date = updatedSportsman.Date;
+
+                            // Обновляем виды спорта
+                            sportsman.IdSport_1 = updatedSportsman.IdSport_1;
+                            sportsman.IdSport_2 = updatedSportsman.IdSport_2;
+                            sportsman.IdSport_3 = updatedSportsman.IdSport_3;
+                            sportsman.IdSport_4 = updatedSportsman.IdSport_4;
+                            sportsman.IdSport_5 = updatedSportsman.IdSport_5;
+
+                            db.SaveChanges();
+                            LoadData();
+                            MessageBox.Show("Спортсмен успешно обновлен");
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Ошибка: {ex.Message}");
+                        }
                     }
                 }
             }

@@ -46,26 +46,26 @@ namespace SportProgramm.Pages
                 // Для DateTime просто присваиваем
                 DatePicker.SelectedDate = _sportsman.Date;
 
-                // Заполняем выбранные виды спорта
-                SetSelectedSport(Sport1ComboBox, _sportsman.IdSport_1);
-                SetSelectedSport(Sport2ComboBox, _sportsman.IdSport_2 ?? int.MinValue);
-                SetSelectedSport(Sport3ComboBox, _sportsman.IdSport_3 ?? int.MinValue);
-                SetSelectedSport(Sport4ComboBox, _sportsman.IdSport_4 ?? int.MinValue);
-                SetSelectedSport(Sport5ComboBox, _sportsman.IdSport_5 ?? int.MinValue);
+                // Заполняем выбранные виды спорта с учетом nullable
+                SetSelectedSport(Sport1ComboBox, _sportsman.IdSport_1); // int
+                SetSelectedSport(Sport2ComboBox, _sportsman.IdSport_2); // Nullable<int>
+                SetSelectedSport(Sport3ComboBox, _sportsman.IdSport_3); // Nullable<int>
+                SetSelectedSport(Sport4ComboBox, _sportsman.IdSport_4); // Nullable<int>
+                SetSelectedSport(Sport5ComboBox, _sportsman.IdSport_5); // Nullable<int>
             }
         }
 
-        private void SetSelectedSport(ComboBox comboBox, int sportId)
+        private void SetSelectedSport(ComboBox comboBox, int? sportId)
         {
-            if (sportId > 0)
+            if (sportId.HasValue && sportId > 0)
             {
-                comboBox.SelectedItem = _sports.FirstOrDefault(s => s.Id == sportId);
+                comboBox.SelectedItem = _sports.FirstOrDefault(s => s.Id == sportId.Value);
             }
         }
 
-        private int GetSelectedSportId(ComboBox comboBox)
+        private int? GetSelectedSportId(ComboBox comboBox)
         {
-            return comboBox.SelectedItem is Sports sport ? sport.Id : 0;
+            return comboBox.SelectedItem is Sports sport ? sport.Id : (int?)null;
         }
 
         private void Save_Click(object sender, RoutedEventArgs e)
@@ -75,6 +75,13 @@ namespace SportProgramm.Pages
                 string.IsNullOrWhiteSpace(LvlTextBox.Text))
             {
                 MessageBox.Show("Заполните обязательные поля");
+                return;
+            }
+
+            // Проверка, что выбран хотя бы один вид спорта (IdSport_1 обязателен)
+            if (Sport1ComboBox.SelectedItem == null)
+            {
+                MessageBox.Show("Выберите основной вид спорта");
                 return;
             }
 
@@ -98,7 +105,10 @@ namespace SportProgramm.Pages
             // Для DateTime используем значение или текущую дату
             sportsman.Date = DatePicker.SelectedDate ?? DateTime.Now;
 
-            sportsman.IdSport_1 = GetSelectedSportId(Sport1ComboBox);
+            // IdSport_1 - обязательный (int)
+            sportsman.IdSport_1 = GetSelectedSportId(Sport1ComboBox) ?? 0;
+
+            // Остальные - nullable
             sportsman.IdSport_2 = GetSelectedSportId(Sport2ComboBox);
             sportsman.IdSport_3 = GetSelectedSportId(Sport3ComboBox);
             sportsman.IdSport_4 = GetSelectedSportId(Sport4ComboBox);
