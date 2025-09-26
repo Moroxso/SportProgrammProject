@@ -38,12 +38,8 @@ namespace SportProgramm.Pages
                 PlaceTextBox.Text = _tournament.Place;
                 ScoreTextBox.Text = _tournament.Score;
 
-                // Исправление для DateTime
-                if (!string.IsNullOrEmpty(_tournament.Date))
-                {
-                    if (DateTime.TryParse(_tournament.Date, out DateTime date))
-                        DatePicker.SelectedDate = date;
-                }
+                // Для DateTime просто присваиваем
+                DatePicker.SelectedDate = _tournament.Date;
 
                 if (_tournament.IdSport > 0)
                     SportComboBox.SelectedItem = _sports.FirstOrDefault(s => s.Id == _tournament.IdSport);
@@ -77,8 +73,8 @@ namespace SportProgramm.Pages
             tournament.Place = PlaceTextBox.Text.Trim();
             tournament.Score = ScoreTextBox.Text.Trim();
 
-            // Исправление для DateTime - сохраняем как строку
-            tournament.Date = DatePicker.SelectedDate?.ToString("dd.MM.yyyy");
+            // Для DateTime используем значение или текущую дату
+            tournament.Date = DatePicker.SelectedDate ?? DateTime.Now;
 
             tournament.IdSport = ((Sports)SportComboBox.SelectedItem).Id;
             return tournament;

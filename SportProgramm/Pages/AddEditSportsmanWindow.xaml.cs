@@ -43,42 +43,29 @@ namespace SportProgramm.Pages
                 TeamTextBox.Text = _sportsman.Team;
                 LvlTextBox.Text = _sportsman.Lvl;
 
-                // Исправление для DateTime
-                if (_sportsman.Date != null) // Проверка на null
-                {
-                    try
-                    {
-                        if (DateTime.TryParse(_sportsman.Date.ToString(), out DateTime date))
-                        {
-                            DatePicker.SelectedDate = date;
-                        }
-                    }
-                    catch
-                    {
-                        // Если не удалось распарсить, оставляем пустым
-                    }
-                }
+                // Для DateTime просто присваиваем
+                DatePicker.SelectedDate = _sportsman.Date;
 
                 // Заполняем выбранные виды спорта
                 SetSelectedSport(Sport1ComboBox, _sportsman.IdSport_1);
-                SetSelectedSport(Sport2ComboBox, _sportsman.IdSport_2);
-                SetSelectedSport(Sport3ComboBox, _sportsman.IdSport_3);
-                SetSelectedSport(Sport4ComboBox, _sportsman.IdSport_4);
-                SetSelectedSport(Sport5ComboBox, _sportsman.IdSport_5);
+                SetSelectedSport(Sport2ComboBox, _sportsman.IdSport_2 ?? int.MinValue);
+                SetSelectedSport(Sport3ComboBox, _sportsman.IdSport_3 ?? int.MinValue);
+                SetSelectedSport(Sport4ComboBox, _sportsman.IdSport_4 ?? int.MinValue);
+                SetSelectedSport(Sport5ComboBox, _sportsman.IdSport_5 ?? int.MinValue);
             }
         }
 
-        private void SetSelectedSport(ComboBox comboBox, int? sportId)
+        private void SetSelectedSport(ComboBox comboBox, int sportId)
         {
-            if (sportId.HasValue && sportId > 0)
+            if (sportId > 0)
             {
-                comboBox.SelectedItem = _sports.FirstOrDefault(s => s.Id == sportId.Value);
+                comboBox.SelectedItem = _sports.FirstOrDefault(s => s.Id == sportId);
             }
         }
 
-        private int? GetSelectedSportId(ComboBox comboBox)
+        private int GetSelectedSportId(ComboBox comboBox)
         {
-            return comboBox.SelectedItem is Sports sport ? sport.Id : (int?)null;
+            return comboBox.SelectedItem is Sports sport ? sport.Id : 0;
         }
 
         private void Save_Click(object sender, RoutedEventArgs e)
@@ -108,14 +95,14 @@ namespace SportProgramm.Pages
             sportsman.Team = TeamTextBox.Text.Trim();
             sportsman.Lvl = LvlTextBox.Text.Trim();
 
-            // Исправление для DateTime - сохраняем как строку
-            sportsman.Date = DatePicker.SelectedDate?.ToString("dd.MM.yyyy");
+            // Для DateTime используем значение или текущую дату
+            sportsman.Date = DatePicker.SelectedDate ?? DateTime.Now;
 
-            sportsman.IdSport_1 = GetSelectedSportId(Sport1ComboBox) ?? 0;
-            sportsman.IdSport_2 = GetSelectedSportId(Sport2ComboBox) ?? 0;
-            sportsman.IdSport_3 = GetSelectedSportId(Sport3ComboBox) ?? 0;
-            sportsman.IdSport_4 = GetSelectedSportId(Sport4ComboBox) ?? 0;
-            sportsman.IdSport_5 = GetSelectedSportId(Sport5ComboBox) ?? 0;
+            sportsman.IdSport_1 = GetSelectedSportId(Sport1ComboBox);
+            sportsman.IdSport_2 = GetSelectedSportId(Sport2ComboBox);
+            sportsman.IdSport_3 = GetSelectedSportId(Sport3ComboBox);
+            sportsman.IdSport_4 = GetSelectedSportId(Sport4ComboBox);
+            sportsman.IdSport_5 = GetSelectedSportId(Sport5ComboBox);
 
             return sportsman;
         }

@@ -34,22 +34,8 @@ namespace SportProgramm.Pages
                 UnitTextBox.Text = _sport.Unit;
                 RecordTextBox.Text = _sport.Record;
 
-                // Исправление для DateTime
-                if (_sport.Date != null) // Проверка на null вместо HasValue
-                {
-                    try
-                    {
-                        // Пробуем распарсить дату из строки
-                        if (DateTime.TryParse(_sport.Date.ToString(), out DateTime date))
-                        {
-                            DatePicker.SelectedDate = date;
-                        }
-                    }
-                    catch
-                    {
-                        // Если не удалось распарсить, оставляем пустым
-                    }
-                }
+                // Для DateTime просто присваиваем значение
+                DatePicker.SelectedDate = _sport.Date;
             }
         }
 
@@ -78,8 +64,8 @@ namespace SportProgramm.Pages
             sport.Unit = UnitTextBox.Text.Trim();
             sport.Record = RecordTextBox.Text.Trim();
 
-            // Исправление для DateTime
-            sport.Date = DatePicker.SelectedDate?.ToString("dd.MM.yyyy"); // Преобразуем в строку
+            // Для DateTime используем значение или текущую дату по умолчанию
+            sport.Date = DatePicker.SelectedDate ?? DateTime.Now;
 
             return sport;
         }
