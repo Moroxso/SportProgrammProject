@@ -3,6 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\user\\Documents\\GitHub\\SportProgrammProject\\SportProgramm\\",
   "Documents": [
     {
+<<<<<<< Updated upstream
       "AbsoluteMoniker": "D:0:0:{A613E344-14FD-4CB9-A7C4-3B1217E1590B}|SportProgramm.csproj|C:\\Users\\user\\Documents\\GitHub\\SportProgrammProject\\SportProgramm\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{A613E344-14FD-4CB9-A7C4-3B1217E1590B}|SportProgramm.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
@@ -35,10 +36,21 @@
       "RelativeMoniker": "D:0:0:{A613E344-14FD-4CB9-A7C4-3B1217E1590B}|SportProgramm.csproj|solutionrelative:pages\\registration.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
+=======
+      "AbsoluteMoniker": "D:0:0:{A613E344-14FD-4CB9-A7C4-3B1217E1590B}|SportProgramm.csproj|c:\\users\\user\\documents\\github\\sportprogrammproject\\sportprogramm\\pages\\registration.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
+      "RelativeMoniker": "D:0:0:{A613E344-14FD-4CB9-A7C4-3B1217E1590B}|SportProgramm.csproj|solutionrelative:pages\\registration.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A613E344-14FD-4CB9-A7C4-3B1217E1590B}|SportProgramm.csproj|c:\\users\\user\\documents\\github\\sportprogrammproject\\sportprogramm\\pages\\registration.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A613E344-14FD-4CB9-A7C4-3B1217E1590B}|SportProgramm.csproj|solutionrelative:pages\\registration.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+>>>>>>> Stashed changes
       "AbsoluteMoniker": "D:0:0:{A613E344-14FD-4CB9-A7C4-3B1217E1590B}|SportProgramm.csproj|C:\\Users\\user\\Documents\\GitHub\\SportProgrammProject\\SportProgramm\\pages\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{A613E344-14FD-4CB9-A7C4-3B1217E1590B}|SportProgramm.csproj|solutionrelative:pages\\login.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
+<<<<<<< Updated upstream
       "AbsoluteMoniker": "D:0:0:{A613E344-14FD-4CB9-A7C4-3B1217E1590B}|SportProgramm.csproj|C:\\Users\\user\\Documents\\GitHub\\SportProgrammProject\\SportProgramm\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{A613E344-14FD-4CB9-A7C4-3B1217E1590B}|SportProgramm.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
@@ -69,6 +81,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{A613E344-14FD-4CB9-A7C4-3B1217E1590B}|SportProgramm.csproj|C:\\Users\\user\\Documents\\GitHub\\SportProgrammProject\\SportProgramm\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{A613E344-14FD-4CB9-A7C4-3B1217E1590B}|SportProgramm.csproj|solutionrelative:packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+=======
+      "AbsoluteMoniker": "D:0:0:{A613E344-14FD-4CB9-A7C4-3B1217E1590B}|SportProgramm.csproj|C:\\Users\\user\\Documents\\GitHub\\SportProgrammProject\\SportProgramm\\pages\\login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A613E344-14FD-4CB9-A7C4-3B1217E1590B}|SportProgramm.csproj|solutionrelative:pages\\login.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> Stashed changes
     }
   ],
   "DocumentGroupContainers": [
@@ -78,7 +94,11 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
+<<<<<<< Updated upstream
           "SelectedChildIndex": 14,
+=======
+          "SelectedChildIndex": 6,
+>>>>>>> Stashed changes
           "Children": [
             {
               "$type": "Bookmark",
@@ -95,6 +115,7 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
+<<<<<<< Updated upstream
               "Title": "RatingOfSportsMans.xaml",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\SportProgrammProject\\SportProgramm\\Pages\\RatingOfSportsMans.xaml",
               "RelativeDocumentMoniker": "Pages\\RatingOfSportsMans.xaml",
@@ -102,11 +123,21 @@
               "RelativeToolTip": "Pages\\RatingOfSportsMans.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-09-24T05:29:52.66Z",
+=======
+              "Title": "Login.xaml",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\SportProgrammProject\\SportProgramm\\Pages\\Login.xaml",
+              "RelativeDocumentMoniker": "Pages\\Login.xaml",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\SportProgrammProject\\SportProgramm\\Pages\\Login.xaml",
+              "RelativeToolTip": "Pages\\Login.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-26T07:05:05.074Z",
+>>>>>>> Stashed changes
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+<<<<<<< Updated upstream
               "Title": "Tournaments.xaml.cs",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\SportProgrammProject\\SportProgramm\\Pages\\Tournaments.xaml.cs",
               "RelativeDocumentMoniker": "Pages\\Tournaments.xaml.cs",
@@ -115,10 +146,21 @@
               "ViewState": "AgIAAAgAAAAAAAAAAAAkwCoAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-24T05:28:53.004Z",
+=======
+              "Title": "Login.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\SportProgrammProject\\SportProgramm\\Pages\\Login.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\Login.xaml.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\SportProgrammProject\\SportProgramm\\Pages\\Login.xaml.cs",
+              "RelativeToolTip": "Pages\\Login.xaml.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAB4AAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-26T07:08:10.718Z",
+>>>>>>> Stashed changes
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+<<<<<<< Updated upstream
               "DocumentIndex": 5,
               "Title": "Tournaments.xaml",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\SportProgrammProject\\SportProgramm\\Pages\\Tournaments.xaml",
@@ -127,10 +169,21 @@
               "RelativeToolTip": "Pages\\Tournaments.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-09-24T05:28:12.705Z",
+=======
+              "DocumentIndex": 1,
+              "Title": "Registration.xaml",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\SportProgrammProject\\SportProgramm\\Pages\\Registration.xaml",
+              "RelativeDocumentMoniker": "Pages\\Registration.xaml",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\SportProgrammProject\\SportProgramm\\Pages\\Registration.xaml",
+              "RelativeToolTip": "Pages\\Registration.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-26T08:29:19.825Z",
+>>>>>>> Stashed changes
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+<<<<<<< Updated upstream
               "DocumentIndex": 6,
               "Title": "Home.xaml",
               "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\SportProgrammProject\\SportProgramm\\Pages\\Home.xaml",
@@ -139,9 +192,27 @@
               "RelativeToolTip": "Pages\\Home.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-09-23T12:02:46.891Z",
+=======
+              "DocumentIndex": 0,
+              "Title": "Registration.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\GitHub\\SportProgrammProject\\SportProgramm\\Pages\\Registration.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\Registration.xaml.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\GitHub\\SportProgrammProject\\SportProgramm\\Pages\\Registration.xaml.cs",
+              "RelativeToolTip": "Pages\\Registration.xaml.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAADwvyMAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-26T08:29:23.028Z",
+>>>>>>> Stashed changes
               "EditorCaption": ""
-            },
+            }
+          ]
+        },
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
             {
+<<<<<<< Updated upstream
               "$type": "Document",
               "DocumentIndex": 9,
               "Title": "App.xaml",
@@ -312,6 +383,8 @@
           "SelectedChildIndex": -1,
           "Children": [
             {
+=======
+>>>>>>> Stashed changes
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             }

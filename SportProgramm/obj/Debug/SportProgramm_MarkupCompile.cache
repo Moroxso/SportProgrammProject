@@ -10,11 +10,19 @@ none
 false
 DEBUG;TRACE
 C:\Users\user\Documents\GitHub\SportProgrammProject\SportProgramm\App.xaml
+<<<<<<< Updated upstream
 71371839067
 21062490903
 20-1762932368
 18591293693
 MainWindow.xaml;Pages\AdminPanel.xaml;Pages\Home.xaml;Pages\Login.xaml;Pages\RatingOfSportsMans.xaml;Pages\Registration.xaml;Pages\Tournaments.xaml;
+=======
+10910494416
+21062490903
+231240099909
+18591293693
+MainWindow.xaml;Pages\AddEditSportsmanWindow.xaml;Pages\AddEditSportWindow.xaml;Pages\AddEditTournamentWindow.xaml;Pages\AdminPanel.xaml;Pages\Home.xaml;Pages\Login.xaml;Pages\RatingOfSportsMans.xaml;Pages\Registration.xaml;Pages\Tournaments.xaml;
+>>>>>>> Stashed changes
 
 False
 

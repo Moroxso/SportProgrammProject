@@ -1,10 +1,21 @@
 ﻿
 FC:\Users\user\Documents\GitHub\SportProgrammProject\SportProgramm\App.xaml;;
 FC:\Users\user\Documents\GitHub\SportProgrammProject\SportProgramm\MainWindow.xaml;;
+<<<<<<< Updated upstream
 FC:\Users\user\Documents\GitHub\SportProgrammProject\SportProgramm\Pages\AdminPanel.xaml;;
 FC:\Users\user\Documents\GitHub\SportProgrammProject\SportProgramm\Pages\Home.xaml;;
 FC:\Users\user\Documents\GitHub\SportProgrammProject\SportProgramm\Pages\Login.xaml;;
 FC:\Users\user\Documents\GitHub\SportProgrammProject\SportProgramm\Pages\Registration.xaml;;
 FC:\Users\user\Documents\GitHub\SportProgrammProject\SportProgramm\Pages\RatingOfSportsMans.xaml;;
+=======
+FC:\Users\user\Documents\GitHub\SportProgrammProject\SportProgramm\Pages\AddEditSportsmanWindow.xaml;;
+FC:\Users\user\Documents\GitHub\SportProgrammProject\SportProgramm\Pages\AddEditSportWindow.xaml;;
+FC:\Users\user\Documents\GitHub\SportProgrammProject\SportProgramm\Pages\AddEditTournamentWindow.xaml;;
+FC:\Users\user\Documents\GitHub\SportProgrammProject\SportProgramm\Pages\AdminPanel.xaml;;
+FC:\Users\user\Documents\GitHub\SportProgrammProject\SportProgramm\Pages\Home.xaml;;
+FC:\Users\user\Documents\GitHub\SportProgrammProject\SportProgramm\Pages\Login.xaml;;
+FC:\Users\user\Documents\GitHub\SportProgrammProject\SportProgramm\Pages\RatingOfSportsMans.xaml;;
+FC:\Users\user\Documents\GitHub\SportProgrammProject\SportProgramm\Pages\Registration.xaml;;
+>>>>>>> Stashed changes
 FC:\Users\user\Documents\GitHub\SportProgrammProject\SportProgramm\Pages\Tournaments.xaml;;
 
