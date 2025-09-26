@@ -38,10 +38,10 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Unit" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Record" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Date" Type="date" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Unit" Type="nvarchar" MaxLength="50" />
+    <Property Name="Record" Type="nvarchar" MaxLength="50" />
+    <Property Name="Date" Type="date" />
   </EntityType>
   <EntityType Name="Users">
     <Key>

@@ -25,7 +25,7 @@ namespace SportProgramm.BaseDate
         public string Name { get; set; }
         public string Unit { get; set; }
         public string Record { get; set; }
-        public System.DateTime Date { get; set; }
+        public Nullable<System.DateTime> Date { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cup> Cup { get; set; }
