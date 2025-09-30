@@ -1,4 +1,5 @@
 ﻿using SportProgramm.BaseDate;
+using SportProgramm.Scripts;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -22,7 +23,7 @@ namespace SportProgramm.Pages
     /// </summary>
     public partial class Tournaments : Page
     {
-        private SportProgrammProjectEntities db = new SportProgrammProjectEntities();
+        private SportProgrammProjectEntities db = DatabaseManager.GetContext();
         public Tournaments()
         {
             InitializeComponent();
@@ -39,6 +40,15 @@ namespace SportProgramm.Pages
             catch (Exception ex)
             {
                 MessageBox.Show($"Ошибка загрузки данных: {ex.Message}");
+            }
+        }
+
+        private void TournamentItem_Click(object sender, MouseButtonEventArgs e)
+        {
+            if (sender is Border border && border.DataContext is Cup tournament)
+            {
+                // Переход на страницу деталей турнира
+                NavigationService.Navigate(new TournamentDetailsPage(tournament.Id));
             }
         }
     }

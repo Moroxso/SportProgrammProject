@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using SportProgramm.BaseDate;
 using System.Data.Entity;
+using SportProgramm.Scripts;
 
 
 namespace SportProgramm.Pages
@@ -23,7 +24,7 @@ namespace SportProgramm.Pages
     /// </summary>
     public partial class Home : Page
     {
-        private SportProgrammProjectEntities db = new SportProgrammProjectEntities();
+        private SportProgrammProjectEntities db = DatabaseManager.GetContext();
         public Home()
         {
             InitializeComponent();

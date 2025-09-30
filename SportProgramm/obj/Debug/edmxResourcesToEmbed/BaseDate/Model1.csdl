@@ -5,10 +5,15 @@
     <EntitySet Name="Roles" EntityType="SportProgrammProjectModel.Roles" />
     <EntitySet Name="Sportman" EntityType="SportProgrammProjectModel.Sportman" />
     <EntitySet Name="Sports" EntityType="SportProgrammProjectModel.Sports" />
+    <EntitySet Name="TournamentResults" EntityType="SportProgrammProjectModel.TournamentResults" />
     <EntitySet Name="Users" EntityType="SportProgrammProjectModel.Users" />
     <AssociationSet Name="FK_Cup_Sports" Association="SportProgrammProjectModel.FK_Cup_Sports">
       <End Role="Sports" EntitySet="Sports" />
       <End Role="Cup" EntitySet="Cup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TournamentResults_Cup" Association="SportProgrammProjectModel.FK_TournamentResults_Cup">
+      <End Role="Cup" EntitySet="Cup" />
+      <End Role="TournamentResults" EntitySet="TournamentResults" />
     </AssociationSet>
     <AssociationSet Name="FK_Users_Roles" Association="SportProgrammProjectModel.FK_Users_Roles">
       <End Role="Roles" EntitySet="Roles" />
@@ -17,6 +22,10 @@
     <AssociationSet Name="FK_Sportman_Sports" Association="SportProgrammProjectModel.FK_Sportman_Sports">
       <End Role="Sports" EntitySet="Sports" />
       <End Role="Sportman" EntitySet="Sportman" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TournamentResults_Sportman" Association="SportProgrammProjectModel.FK_TournamentResults_Sportman">
+      <End Role="Sportman" EntitySet="Sportman" />
+      <End Role="TournamentResults" EntitySet="TournamentResults" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="Cup">
@@ -30,6 +39,7 @@
     <Property Name="Place" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="IdSport" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Sports" Relationship="SportProgrammProjectModel.FK_Cup_Sports" FromRole="Cup" ToRole="Sports" />
+    <NavigationProperty Name="TournamentResults" Relationship="SportProgrammProjectModel.FK_TournamentResults_Cup" FromRole="Cup" ToRole="TournamentResults" />
   </EntityType>
   <EntityType Name="Roles">
     <Key>
@@ -54,18 +64,32 @@
     <Property Name="IdSport_4" Type="Int32" />
     <Property Name="IdSport_5" Type="Int32" />
     <NavigationProperty Name="Sports" Relationship="SportProgrammProjectModel.FK_Sportman_Sports" FromRole="Sportman" ToRole="Sports" />
+    <NavigationProperty Name="TournamentResults" Relationship="SportProgrammProjectModel.FK_TournamentResults_Sportman" FromRole="Sportman" ToRole="TournamentResults" />
   </EntityType>
   <EntityType Name="Sports">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Unit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Record" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Unit" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Record" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
     <NavigationProperty Name="Cup" Relationship="SportProgrammProjectModel.FK_Cup_Sports" FromRole="Sports" ToRole="Cup" />
     <NavigationProperty Name="Sportman" Relationship="SportProgrammProjectModel.FK_Sportman_Sports" FromRole="Sports" ToRole="Sportman" />
+  </EntityType>
+  <EntityType Name="TournamentResults">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdCup" Type="Int32" Nullable="false" />
+    <Property Name="IdPlayer" Type="Int32" Nullable="false" />
+    <Property Name="Position" Type="Int32" />
+    <Property Name="Score" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Points" Type="Int32" />
+    <NavigationProperty Name="Cup" Relationship="SportProgrammProjectModel.FK_TournamentResults_Cup" FromRole="TournamentResults" ToRole="Cup" />
+    <NavigationProperty Name="Sportman" Relationship="SportProgrammProjectModel.FK_TournamentResults_Sportman" FromRole="TournamentResults" ToRole="Sportman" />
   </EntityType>
   <EntityType Name="Users">
     <Key>
@@ -90,6 +114,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_TournamentResults_Cup">
+    <End Type="SportProgrammProjectModel.Cup" Role="Cup" Multiplicity="1" />
+    <End Type="SportProgrammProjectModel.TournamentResults" Role="TournamentResults" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cup">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TournamentResults">
+        <PropertyRef Name="IdCup" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Users_Roles">
     <End Type="SportProgrammProjectModel.Roles" Role="Roles" Multiplicity="1" />
     <End Type="SportProgrammProjectModel.Users" Role="Users" Multiplicity="*" />
@@ -111,6 +147,18 @@
       </Principal>
       <Dependent Role="Sportman">
         <PropertyRef Name="IdSport_1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TournamentResults_Sportman">
+    <End Type="SportProgrammProjectModel.Sportman" Role="Sportman" Multiplicity="1" />
+    <End Type="SportProgrammProjectModel.TournamentResults" Role="TournamentResults" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sportman">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TournamentResults">
+        <PropertyRef Name="IdPlayer" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

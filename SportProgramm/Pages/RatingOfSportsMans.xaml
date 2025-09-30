@@ -25,7 +25,7 @@
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
                         <Border Style="{StaticResource SportsmanCardStyle}" 
-                                Height="80" Margin="10 5">
+                                Height="80" Margin="10 5" Cursor="Hand" MouseLeftButtonUp="SportsmanItem_Click">
                             <Grid Margin="15 10">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto"/>

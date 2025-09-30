@@ -5,14 +5,17 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="254e244f4f4946e9b43c77844e4a7930" Name="Diagram1">
-        <EntityTypeShape EntityType="SportProgrammProjectModel.Cup" Width="1.5" PointX="3" PointY="1.125" />
-        <EntityTypeShape EntityType="SportProgrammProjectModel.Roles" Width="1.5" PointX="5.75" PointY="1.25" />
-        <EntityTypeShape EntityType="SportProgrammProjectModel.Sportman" Width="1.5" PointX="3" PointY="4.25" />
-        <EntityTypeShape EntityType="SportProgrammProjectModel.Sports" Width="1.5" PointX="0.75" PointY="3.125" />
-        <EntityTypeShape EntityType="SportProgrammProjectModel.Users" Width="1.5" PointX="8" PointY="0.875" />
+        <EntityTypeShape EntityType="SportProgrammProjectModel.Cup" Width="1.5" PointX="3" PointY="5.25" />
+        <EntityTypeShape EntityType="SportProgrammProjectModel.Roles" Width="1.5" PointX="5.75" PointY="7.25" />
+        <EntityTypeShape EntityType="SportProgrammProjectModel.Sportman" Width="1.5" PointX="3" PointY="1.125" />
+        <EntityTypeShape EntityType="SportProgrammProjectModel.Sports" Width="1.5" PointX="0.75" PointY="3.25" />
+        <EntityTypeShape EntityType="SportProgrammProjectModel.TournamentResults" Width="1.5" PointX="5.25" PointY="3.25" />
+        <EntityTypeShape EntityType="SportProgrammProjectModel.Users" Width="1.5" PointX="8" PointY="6.875" />
         <AssociationConnector Association="SportProgrammProjectModel.FK_Cup_Sports" />
+        <AssociationConnector Association="SportProgrammProjectModel.FK_TournamentResults_Cup" />
         <AssociationConnector Association="SportProgrammProjectModel.FK_Users_Roles" />
         <AssociationConnector Association="SportProgrammProjectModel.FK_Sportman_Sports" />
+        <AssociationConnector Association="SportProgrammProjectModel.FK_TournamentResults_Sportman" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

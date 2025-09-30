@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using SportProgramm.Pages.AdminPanelPages;
+using SportProgramm.Scripts;
 
 
 namespace SportProgramm.Pages
@@ -24,7 +25,7 @@ namespace SportProgramm.Pages
     /// </summary>
     public partial class AdminPanel : Page
     {
-        private SportProgrammProjectEntities db = new SportProgrammProjectEntities();
+        private SportProgrammProjectEntities db = DatabaseManager.GetContext();
 
         public AdminPanel()
         {

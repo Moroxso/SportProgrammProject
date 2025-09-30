@@ -38,10 +38,21 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar" MaxLength="50" />
-    <Property Name="Unit" Type="nvarchar" MaxLength="50" />
-    <Property Name="Record" Type="nvarchar" MaxLength="50" />
-    <Property Name="Date" Type="date" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Unit" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Record" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Date" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TournamentResults">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdCup" Type="int" Nullable="false" />
+    <Property Name="IdPlayer" Type="int" Nullable="false" />
+    <Property Name="Position" Type="int" />
+    <Property Name="Score" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Points" Type="int" />
   </EntityType>
   <EntityType Name="Users">
     <Key>
@@ -77,6 +88,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_TournamentResults_Cup">
+    <End Role="Cup" Type="Self.Cup" Multiplicity="1" />
+    <End Role="TournamentResults" Type="Self.TournamentResults" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cup">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TournamentResults">
+        <PropertyRef Name="IdCup" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TournamentResults_Sportman">
+    <End Role="Sportman" Type="Self.Sportman" Multiplicity="1" />
+    <End Role="TournamentResults" Type="Self.TournamentResults" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sportman">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TournamentResults">
+        <PropertyRef Name="IdPlayer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Users_Roles">
     <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
     <End Role="Users" Type="Self.Users" Multiplicity="*" />
@@ -94,6 +129,7 @@
     <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Sportman" EntityType="Self.Sportman" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Sports" EntityType="Self.Sports" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TournamentResults" EntityType="Self.TournamentResults" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Cup_Sports" Association="Self.FK_Cup_Sports">
       <End Role="Sports" EntitySet="Sports" />
@@ -102,6 +138,14 @@
     <AssociationSet Name="FK_Sportman_Sports" Association="Self.FK_Sportman_Sports">
       <End Role="Sports" EntitySet="Sports" />
       <End Role="Sportman" EntitySet="Sportman" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TournamentResults_Cup" Association="Self.FK_TournamentResults_Cup">
+      <End Role="Cup" EntitySet="Cup" />
+      <End Role="TournamentResults" EntitySet="TournamentResults" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TournamentResults_Sportman" Association="Self.FK_TournamentResults_Sportman">
+      <End Role="Sportman" EntitySet="Sportman" />
+      <End Role="TournamentResults" EntitySet="TournamentResults" />
     </AssociationSet>
     <AssociationSet Name="FK_Users_Roles" Association="Self.FK_Users_Roles">
       <End Role="Roles" EntitySet="Roles" />

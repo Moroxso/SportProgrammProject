@@ -20,9 +20,13 @@
                        FontSize="24" FontWeight="Bold" Foreground="#2c3e50"/>
             <Button Content="Добавить турнир" Style="{StaticResource SuccessButtonStyle}"
                     Click="AddTournament_Click" Margin="20 0 0 0" Padding="15 10"/>
+            <Button Grid.Column="1" Content="Участники" 
+                Style="{StaticResource AdminButtonStyle}"
+                Click="ManageParticipants_Click" Tag="{Binding Id}"
+                Margin="5 0" Padding="10 5"/>
         </StackPanel>
 
-        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Hidden" MaxHeight="740">
             <ItemsControl x:Name="TournamentsList">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>

@@ -1,4 +1,5 @@
 ﻿using SportProgramm.BaseDate;
+using SportProgramm.Pages.AdminPanelPages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -78,6 +79,15 @@ namespace SportProgramm.Pages
 
             tournament.IdSport = ((Sports)SportComboBox.SelectedItem).Id;
             return tournament;
+        }
+
+        private void ManageParticipants_Click(object sender, RoutedEventArgs e)
+        {
+            var tournament = GetTournament(); // Получаем текущие данные
+
+            var manageWindow = new ManageTournamentParticipantsWindow(tournament);
+            manageWindow.Owner = this;
+            manageWindow.ShowDialog();
         }
     }
 }

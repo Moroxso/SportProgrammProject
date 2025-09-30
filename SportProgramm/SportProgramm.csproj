@@ -70,6 +70,9 @@
     <Compile Include="BaseDate\Sports.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="BaseDate\TournamentResults.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AdminPanelPages\AddEditSportsmanWindow.xaml.cs">
       <DependentUpon>AddEditSportsmanWindow.xaml</DependentUpon>
     </Compile>
@@ -78,6 +81,9 @@
     </Compile>
     <Compile Include="Pages\AdminPanelPages\AddEditTournamentWindow.xaml.cs">
       <DependentUpon>AddEditTournamentWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AdminPanelPages\DatabaseConnectionWindow.xaml.cs">
+      <DependentUpon>DatabaseConnectionWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\AdminPanelPages\EditSportsmenPage.xaml.cs">
       <DependentUpon>EditSportsmenPage.xaml</DependentUpon>
@@ -88,13 +94,28 @@
     <Compile Include="Pages\AdminPanelPages\EditTournamentsPage.xaml.cs">
       <DependentUpon>EditTournamentsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\AdminPanelPages\ManageTournamentParticipantsWindow.xaml.cs">
+      <DependentUpon>ManageTournamentParticipantsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\RatingOfSportsMans.xaml.cs">
       <DependentUpon>RatingOfSportsMans.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SportsmanProfilePage.xaml.cs">
+      <DependentUpon>SportsmanProfilePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TournamentDetailsPage.xaml.cs">
+      <DependentUpon>TournamentDetailsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Tournaments.xaml.cs">
       <DependentUpon>Tournaments.xaml</DependentUpon>
     </Compile>
     <Compile Include="Scripts\DataBaseConnect.cs" />
+    <Compile Include="Scripts\DatabaseConnectionInfo.cs" />
+    <Compile Include="Scripts\DatabaseHelper.cs" />
+    <Compile Include="Scripts\DatabaseManager.cs" />
+    <Compile Include="Scripts\IDatabaseService.cs" />
+    <Compile Include="Scripts\LocalDatabaseService.cs" />
+    <Compile Include="Scripts\SqlServerDatabaseService.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -147,6 +168,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\AdminPanelPages\DatabaseConnectionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\AdminPanelPages\EditSportsmenPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -156,6 +181,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\AdminPanelPages\EditTournamentsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AdminPanelPages\ManageTournamentParticipantsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -172,6 +201,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Registration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SportsmanProfilePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\TournamentDetailsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

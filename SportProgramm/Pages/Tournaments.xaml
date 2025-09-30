@@ -44,7 +44,7 @@
             <ItemsControl x:Name="TournamentsList">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <Border Style="{StaticResource NewsSectionStyle}">
+                        <Border Style="{StaticResource NewsSectionStyle}" Cursor="Hand" MouseLeftButtonUp="TournamentItem_Click">
                             <Grid Margin="10">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto"/>

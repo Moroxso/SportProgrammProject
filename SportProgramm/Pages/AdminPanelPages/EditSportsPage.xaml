@@ -24,7 +24,7 @@
         </StackPanel>
 
         <!-- Список видов спорта -->
-        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Hidden" MaxHeight="740">
             <ItemsControl x:Name="SportsList">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>

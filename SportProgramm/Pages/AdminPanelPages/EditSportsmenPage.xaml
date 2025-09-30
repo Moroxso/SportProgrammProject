@@ -24,7 +24,7 @@
         </StackPanel>
 
         <!-- Список спортсменов -->
-        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Hidden" MaxHeight="740">
             <ItemsControl x:Name="SportsmenList">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>

@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using SportProgramm.BaseDate;
+using SportProgramm.Scripts;
 
 namespace SportProgramm.Pages
 {
@@ -22,7 +23,7 @@ namespace SportProgramm.Pages
     /// </summary>
     public partial class RatingOfSportsMans : Page
     {
-        private SportProgrammProjectEntities db = new SportProgrammProjectEntities();
+        private SportProgrammProjectEntities db = DatabaseManager.GetContext();
 
         public RatingOfSportsMans()
         {
@@ -120,6 +121,14 @@ namespace SportProgramm.Pages
             if (sportsman.IdSport_5 > 0) score += 100;
 
             return score;
+        }
+
+        private void SportsmanItem_Click(object sender, MouseButtonEventArgs e)
+        {
+            if (sender is Border border && border.DataContext is SportsmanViewModel sportsman)
+            {
+                NavigationService.Navigate(new SportsmanProfilePage(sportsman.Id));
+            }
         }
     }
 

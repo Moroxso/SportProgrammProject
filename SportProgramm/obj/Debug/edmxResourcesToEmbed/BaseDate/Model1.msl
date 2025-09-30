@@ -48,6 +48,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="TournamentResults">
+      <EntityTypeMapping TypeName="SportProgrammProjectModel.TournamentResults">
+        <MappingFragment StoreEntitySet="TournamentResults">
+          <ScalarProperty Name="Points" ColumnName="Points" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="IdPlayer" ColumnName="IdPlayer" />
+          <ScalarProperty Name="IdCup" ColumnName="IdCup" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Users">
       <EntityTypeMapping TypeName="SportProgrammProjectModel.Users">
         <MappingFragment StoreEntitySet="Users">

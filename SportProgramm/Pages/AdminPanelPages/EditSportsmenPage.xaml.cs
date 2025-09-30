@@ -1,4 +1,5 @@
 ﻿using SportProgramm.BaseDate;
+using SportProgramm.Scripts;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -22,7 +23,7 @@ namespace SportProgramm.Pages.AdminPanelPages
     /// </summary>
     public partial class EditSportsmenPage : Page
     {
-        private SportProgrammProjectEntities db = new SportProgrammProjectEntities();
+        private SportProgrammProjectEntities db = DatabaseManager.GetContext();
 
         public EditSportsmenPage()
         {

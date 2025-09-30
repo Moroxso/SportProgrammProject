@@ -1,4 +1,5 @@
 ﻿using SportProgramm.BaseDate;
+using SportProgramm.Scripts;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -22,7 +23,7 @@ namespace SportProgramm.Pages.AdminPanelPages
     /// </summary>
     public partial class EditTournamentsPage : Page
     {
-        private SportProgrammProjectEntities db = new SportProgrammProjectEntities();
+        private SportProgrammProjectEntities db = DatabaseManager.GetContext();
 
         public EditTournamentsPage()
         {
@@ -132,5 +133,24 @@ namespace SportProgramm.Pages.AdminPanelPages
         {
             NavigationService.GoBack();
         }
+
+        private void ManageParticipants_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            if (button?.Tag != null)
+            {
+                int tournamentId = (int)button.Tag;
+                var tournament = db.Cup.Find(tournamentId);
+
+                if (tournament != null)
+                {
+                    var manageWindow = new ManageTournamentParticipantsWindow(tournament);
+                    manageWindow.Owner = Window.GetWindow(this);
+                    manageWindow.ShowDialog();
+                    LoadTournaments(); // Обновляем данные
+                }
+            }
+        }
+
     }
 }

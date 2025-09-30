@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\ckuzi\Documents\GitHub\SportProgrammProject\SportProgramm\obj\Debug\
+C:\Users\user\Documents\GitHub\SportProgrammProject\SportProgramm\obj\Debug\
 SportProgramm
 none
 false
 DEBUG;TRACE
-C:\Users\ckuzi\Documents\GitHub\SportProgrammProject\SportProgramm\App.xaml
-13636251069
+C:\Users\user\Documents\GitHub\SportProgrammProject\SportProgramm\App.xaml
+16-630196537
 21062490903
-261118079132
-181212457633
-MainWindow.xaml;Pages\AdminPanelPages\AddEditSportsmanWindow.xaml;Pages\AdminPanelPages\AddEditSportWindow.xaml;Pages\AdminPanelPages\AddEditTournamentWindow.xaml;Pages\AdminPanel.xaml;Pages\AdminPanelPages\EditSportsmenPage.xaml;Pages\AdminPanelPages\EditSportsPage.xaml;Pages\AdminPanelPages\EditTournamentsPage.xaml;Pages\Home.xaml;Pages\Login.xaml;Pages\RatingOfSportsMans.xaml;Pages\Registration.xaml;Pages\Tournaments.xaml;
+301155751698
+18591293693
+MainWindow.xaml;Pages\AdminPanelPages\AddEditSportsmanWindow.xaml;Pages\AdminPanelPages\AddEditSportWindow.xaml;Pages\AdminPanelPages\AddEditTournamentWindow.xaml;Pages\AdminPanel.xaml;Pages\AdminPanelPages\EditSportsmenPage.xaml;Pages\AdminPanelPages\EditSportsPage.xaml;Pages\AdminPanelPages\EditTournamentsPage.xaml;Pages\AdminPanelPages\ManageTournamentParticipantsWindow.xaml;Pages\Home.xaml;Pages\Login.xaml;Pages\RatingOfSportsMans.xaml;Pages\Registration.xaml;Pages\SportsmanProfilePage.xaml;Pages\TournamentDetailsPage.xaml;Pages\Tournaments.xaml;
 
 False
 

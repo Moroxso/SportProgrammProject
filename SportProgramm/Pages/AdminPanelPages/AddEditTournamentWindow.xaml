@@ -33,8 +33,11 @@
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 20">
                 <Button Content="Отмена" Style="{StaticResource AdminButtonStyle}" 
                         Background="#95a5a6" Click="Cancel_Click" Margin="0 0 10 0"/>
+                <Button Content="Управление участниками" Style="{StaticResource AdminButtonStyle}"
+                        Click="ManageParticipants_Click" Margin="5 0 15 0"/>
                 <Button Content="Сохранить" Style="{StaticResource SuccessButtonStyle}" 
                         Click="Save_Click"/>
+
             </StackPanel>
         </StackPanel>
     </Border>

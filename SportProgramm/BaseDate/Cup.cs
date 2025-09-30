@@ -14,6 +14,12 @@ namespace SportProgramm.BaseDate
     
     public partial class Cup
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Cup()
+        {
+            this.TournamentResults = new HashSet<TournamentResults>();
+        }
+    
         public int Id { get; set; }
         public string Name { get; set; }
         public string Score { get; set; }
@@ -22,5 +28,7 @@ namespace SportProgramm.BaseDate
         public int IdSport { get; set; }
     
         public virtual Sports Sports { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TournamentResults> TournamentResults { get; set; }
     }
 }
