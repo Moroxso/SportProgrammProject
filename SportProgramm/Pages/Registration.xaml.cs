@@ -28,48 +28,145 @@ namespace SportProgramm.Pages
         {
             InitializeComponent();
         }
-
-        private void Password_Changed(object sender, RoutedEventArgs e)
+private void Password_Changed(object sender, RoutedEventArgs e)
+{
+    string password = psbPass.Password;
+    string confirmPassword = txbPass.Text;
+    
+    bool passwordsMatch = password == confirmPassword;
+    bool isPasswordStrong = IsPasswordStrong(password);
+    
+    // Обновляем подсказку
+    if (PasswordRequirements != null)
+    {
+        if (password.Length == 0)
         {
-            if (psbPass.Password != txbPass.Text)
+            PasswordRequirements.Text = "Пароль должен содержать минимум 8 символов, буквы и цифры";
+            PasswordRequirements.Foreground = Brushes.Gray;
+        }
+        else if (!isPasswordStrong)
+        {
+            PasswordRequirements.Text = "Слабый пароль - добавьте цифры и буквы";
+            PasswordRequirements.Foreground = Brushes.Orange;
+        }
+        else
+        {
+            PasswordRequirements.Text = "Надежный пароль";
+            PasswordRequirements.Foreground = Brushes.Green;
+        }
+    }
+    
+    if (!passwordsMatch || !isPasswordStrong)
+    {
+        ButtonRegistration.IsEnabled = false;
+        
+        if (!passwordsMatch)
+        {
+            psbPass.Background = Brushes.LightCoral;
+            psbPass.BorderBrush = Brushes.Red;
+        }
+        else
+        {
+            psbPass.Background = Brushes.LightYellow;
+            psbPass.BorderBrush = Brushes.Orange;
+        }
+    }
+    else
+    {
+        ButtonRegistration.IsEnabled = true;
+        psbPass.Background = Brushes.LightGreen;
+        psbPass.BorderBrush = Brushes.Green;
+    }
+}
+
+        // Метод проверки сложности пароля
+        private bool IsPasswordStrong(string password)
+        {
+            if (string.IsNullOrEmpty(password) || password.Length < 8)
+                return false;
+
+            bool hasLetter = false;
+            bool hasDigit = false;
+
+            foreach (char c in password)
             {
-                ButtonRegistration.IsEnabled = false;
-                psbPass.Background = Brushes.LightCoral;
-                psbPass.BorderBrush = Brushes.LightCoral;
+                if (char.IsLetter(c))
+                    hasLetter = true;
+                else if (char.IsDigit(c))
+                    hasDigit = true;
+
+                // Если уже нашли и букву и цифру, можно выйти из цикла
+                if (hasLetter && hasDigit)
+                    break;
             }
-            else
-            {
-                ButtonRegistration.IsEnabled = true;
-                psbPass.Background = Brushes.LightGreen;
-                psbPass.BorderBrush = Brushes.LightGreen;
-            }
+
+            return hasLetter && hasDigit;
         }
 
         private void ButtonReg(object sender, RoutedEventArgs e)
         {
-            if (AppConnect.model0db.Users.Count(x => x.Login == txbLogin.Text) > 0)
+            // Проверяем сложность пароля перед регистрацией
+            if (!IsPasswordStrong(psbPass.Password))
             {
-                MessageBox.Show("Пользователь с такими логином есть!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Пароль должен содержать минимум 8 символов, включая буквы и цифры!",
+                               "Слабый пароль",
+                               MessageBoxButton.OK,
+                               MessageBoxImage.Warning);
                 return;
             }
+
+            if (psbPass.Password != txbPass.Text)
+            {
+                MessageBox.Show("Пароли не совпадают!",
+                               "Ошибка",
+                               MessageBoxButton.OK,
+                               MessageBoxImage.Error);
+                return;
+            }
+
+            if (AppConnect.model0db.Users.Count(x => x.Login == txbLogin.Text) > 0)
+            {
+                MessageBox.Show("Пользователь с таким логином уже существует!",
+                               "Уведомление",
+                               MessageBoxButton.OK,
+                               MessageBoxImage.Information);
+                return;
+            }
+
             try
             {
                 Users userObj = new Users()
                 {
-                    Name = txbLogin.Text,
+                    Name = txbLogin.Text, // Добавь поле для имени если нужно
                     Login = txbLogin.Text,
-                    Password = txbPass.Text,
-                    IdRole = 2
+                    Password = psbPass.Password,
+                    IdRole = 2 // Обычный пользователь
                 };
+
                 AppConnect.model0db.Users.Add(userObj);
-
-
                 AppConnect.model0db.SaveChanges();
-                MessageBox.Show("Данные успешно добавлены!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                // Автоматически входим после регистрации
+                CurrentUser.User = userObj;
+
+                // Обновляем интерфейс главного окна
+                var mainWindow = Application.Current.MainWindow as MainWindow;
+                mainWindow?.RefreshUserInterface();
+
+                MessageBox.Show("Регистрация прошла успешно! Добро пожаловать!",
+                               "Уведомление",
+                               MessageBoxButton.OK,
+                               MessageBoxImage.Information);
+
+                // Переходим на главную страницу
+                AppFrame.frameMain.Navigate(new Home());
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Ошибка при добавление данных!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"Ошибка при регистрации: {ex.Message}",
+                               "Ошибка",
+                               MessageBoxButton.OK,
+                               MessageBoxImage.Error);
             }
         }
 

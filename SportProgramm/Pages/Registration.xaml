@@ -19,6 +19,11 @@
                     <TextBlock Margin="25 15 10 10">Введите Логин:</TextBlock>
                     <TextBox x:Name="txbLogin"  Margin="20 0 20 5" Padding="3" ></TextBox>
                     <TextBlock Margin="25 10 10 10">Введите Пароль:</TextBlock>
+                    <TextBlock x:Name="PasswordRequirements" 
+                    Text="Пароль должен содержать минимум 8 символов, буквы и цифры"
+                    FontSize="8" 
+                    Foreground="Gray"
+                    Margin="25 -10 0 0"/>
                     <TextBox x:Name="txbPass" Margin="20 0 20 10" Padding="3"></TextBox>
                     <TextBlock Margin="25 0 10 10">Подтвердите Пароль:</TextBlock>
                     <PasswordBox x:Name="psbPass"  Margin="20 0 20 35" Padding="3" PasswordChanged="Password_Changed"></PasswordBox>

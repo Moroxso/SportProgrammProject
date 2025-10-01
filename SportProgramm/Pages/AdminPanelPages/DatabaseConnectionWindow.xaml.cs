@@ -1,4 +1,5 @@
-﻿using SportProgramm.Scripts;
+﻿using SportProgramm.BaseDate;
+using SportProgramm.Scripts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,46 +24,70 @@ namespace SportProgramm.Pages.AdminPanelPages
         public DatabaseConnectionWindow()
         {
             InitializeComponent();
+
+            // Инициализируем после загрузки окна
+            Loaded += DatabaseConnectionWindow_Loaded;
+        }
+
+        private void DatabaseConnectionWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            // Теперь элементы гарантированно инициализированы
             UpdateStatus();
         }
 
+        // Обработчик изменения типа подключения
         private void ConnectionType_Changed(object sender, RoutedEventArgs e)
         {
-            SqlServerPanel.Visibility = SqlServerRadio.IsChecked == true ? Visibility.Visible : Visibility.Collapsed;
-            UpdateStatus();
+            if (SqlServerPanel != null && SqlServerRadio != null)
+            {
+                SqlServerPanel.Visibility = SqlServerRadio.IsChecked == true ? Visibility.Visible : Visibility.Collapsed;
+                UpdateStatus();
+            }
         }
 
+        // Обработчик изменения типа аутентификации
         private void AuthType_Changed(object sender, RoutedEventArgs e)
         {
-            SqlAuthPanel.Visibility = WindowsAuthCheckBox.IsChecked == true ? Visibility.Collapsed : Visibility.Visible;
+            if (SqlAuthPanel != null && WindowsAuthCheckBox != null)
+            {
+                SqlAuthPanel.Visibility = WindowsAuthCheckBox.IsChecked == true ? Visibility.Collapsed : Visibility.Visible;
+            }
         }
 
+        // Обновление статуса подключения
         private void UpdateStatus()
         {
-            if (LocalDbRadio.IsChecked == true)
+            if (StatusText != null && LocalDbRadio != null)
             {
-                StatusText.Text = "Будет использована локальная база данных. Данные сохраняются на этом компьютере.";
-                StatusText.Foreground = Brushes.Green;
-            }
-            else
-            {
-                StatusText.Text = "Подключение к SQL Server. Требуется доступ к серверу базы данных.";
-                StatusText.Foreground = Brushes.Blue;
+                if (LocalDbRadio.IsChecked == true)
+                {
+                    StatusText.Text = "Будет использована локальная база данных. Данные сохраняются на этом компьютере.";
+                    StatusText.Foreground = System.Windows.Media.Brushes.Green;
+                }
+                else
+                {
+                    StatusText.Text = "Подключение к SQL Server. Требуется доступ к серверу базы данных.";
+                    StatusText.Foreground = System.Windows.Media.Brushes.Blue;
+                }
             }
         }
 
+        // Обработчик кнопки "Подключиться"
         private void Connect_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                if (LocalDbRadio.IsChecked == true)
+                // Если выбран LocalDB, просто продолжаем
+                if (LocalDbRadio?.IsChecked == true)
                 {
-                    DatabaseManager.SwitchToLocalDB();
+                    DialogResult = true;
+                    Close();
                 }
-                // Для SQL Server можно добавить кастомную логику подключения
-
-                DialogResult = true;
-                Close();
+                else if (SqlServerRadio?.IsChecked == true)
+                {
+                    DialogResult = true;
+                    Close();
+                }
             }
             catch (Exception ex)
             {
@@ -70,6 +95,7 @@ namespace SportProgramm.Pages.AdminPanelPages
             }
         }
 
+        // Обработчик кнопки "Отмена"
         private void Cancel_Click(object sender, RoutedEventArgs e)
         {
             DialogResult = false;
@@ -77,3 +103,5 @@ namespace SportProgramm.Pages.AdminPanelPages
         }
     }
 }
+    
+

@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace SportProgramm.Scripts
 {
@@ -13,17 +14,39 @@ namespace SportProgramm.Scripts
     {
         private SportProgrammProjectEntities _context;
         public bool IsConnected { get; private set; }
+        public SportProgrammProjectEntities Context => _context;
 
         public void Initialize()
         {
             try
             {
                 _context = new SportProgrammProjectEntities();
+
+                // Пробуем изменить строку подключения если нужно
+                var config = DatabaseConfig.Load();
+                if (!string.IsNullOrEmpty(config.Server) && !string.IsNullOrEmpty(config.Database))
+                {
+                    var connectionString = BuildConnectionString(config);
+                    _context.Database.Connection.ConnectionString = connectionString;
+                }
+
                 TestConnection();
             }
             catch
             {
                 IsConnected = false;
+            }
+        }
+
+        private string BuildConnectionString(DatabaseConfig config)
+        {
+            if (config.UseWindowsAuth)
+            {
+                return $@"Data Source={config.Server};Initial Catalog={config.Database};Integrated Security=True;MultipleActiveResultSets=True";
+            }
+            else
+            {
+                return $@"Data Source={config.Server};Initial Catalog={config.Database};User Id={config.Username};Password={config.Password};MultipleActiveResultSets=True";
             }
         }
 
@@ -34,10 +57,8 @@ namespace SportProgramm.Scripts
                 IsConnected = _context.Database.Exists();
                 if (IsConnected)
                 {
-                    // Проверяем, что все таблицы существуют
-                    var connection = _context.Database.Connection;
-                    connection.Open();
-                    connection.Close();
+                    // Простая проверка - пытаемся выполнить запрос
+                    var test = _context.Sports.FirstOrDefault();
                 }
             }
             catch
@@ -57,50 +78,55 @@ namespace SportProgramm.Scripts
 
                 string backupFile = Path.Combine(backupDir, $"Backup_{DateTime.Now:yyyyMMdd_HHmmss}.bak");
 
-                // SQL команда для бэкапа
                 string backupCommand = $@"BACKUP DATABASE [{_context.Database.Connection.Database}] 
                                    TO DISK = '{backupFile}'";
 
                 _context.Database.ExecuteSqlCommand(TransactionalBehavior.DoNotEnsureTransaction, backupCommand);
+
+                MessageBox.Show($"Бэкап создан: {backupFile}");
             }
             catch (Exception ex)
             {
-                throw new Exception($"Ошибка создания бэкапа: {ex.Message}");
+                MessageBox.Show($"Ошибка создания бэкапа: {ex.Message}");
             }
         }
 
         public void RestoreFromBackup(string backupPath)
         {
-            if (!File.Exists(backupPath)) return;
+            if (!File.Exists(backupPath))
+            {
+                MessageBox.Show("Файл бэкапа не найден");
+                return;
+            }
 
             try
             {
-                // Переключаемся на master базу для восстановления
-                var masterConnectionString = _context.Database.Connection.ConnectionString
-                    .Replace(_context.Database.Connection.Database, "master");
+                string databaseName = _context.Database.Connection.Database;
+                string masterConnectionString = _context.Database.Connection.ConnectionString
+                    .Replace(databaseName, "master");
 
-                using (var masterContext = new SportProgrammProjectEntities(masterConnectionString))
+                using (var masterConnection = new System.Data.SqlClient.SqlConnection(masterConnectionString))
                 {
-                    string restoreCommand = $@"USE master;
-                                        ALTER DATABASE [{_context.Database.Connection.Database}] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
-                                        RESTORE DATABASE [{_context.Database.Connection.Database}] 
-                                        FROM DISK = '{backupPath}' WITH REPLACE;
-                                        ALTER DATABASE [{_context.Database.Connection.Database}] SET MULTI_USER;";
+                    masterConnection.Open();
 
-                    masterContext.Database.ExecuteSqlCommand(TransactionalBehavior.DoNotEnsureTransaction, restoreCommand);
+                    string restoreCommand = $@"
+                    ALTER DATABASE [{databaseName}] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+                    RESTORE DATABASE [{databaseName}] FROM DISK = '{backupPath}' WITH REPLACE;
+                    ALTER DATABASE [{databaseName}] SET MULTI_USER;";
+
+                    using (var command = new System.Data.SqlClient.SqlCommand(restoreCommand, masterConnection))
+                    {
+                        command.ExecuteNonQuery();
+                    }
                 }
 
                 TestConnection();
+                MessageBox.Show("База данных успешно восстановлена из бэкапа");
             }
             catch (Exception ex)
             {
-                throw new Exception($"Ошибка восстановления: {ex.Message}");
+                MessageBox.Show($"Ошибка восстановления: {ex.Message}");
             }
-        }
-
-        public SportProgrammProjectEntities GetContext()
-        {
-            return _context;
         }
     }
 }

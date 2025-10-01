@@ -8,6 +8,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using SportProgramm.Pages.AdminPanelPages;
 
 namespace SportProgramm
 {
@@ -22,31 +23,26 @@ namespace SportProgramm
 
             try
             {
-                // Инициализируем базу данных
+                // Инициализируем базу данных БЕЗ показа сообщений
                 DatabaseManager.Initialize();
 
-                if (!DatabaseManager.IsConnected())
+                if (DatabaseManager.IsConnected())
                 {
-                    MessageBox.Show("Не удалось подключиться к базе данных. Приложение будет закрыто.");
-                    Shutdown();
-                    return;
-                }
-
-                // Показываем окно подключения
-                var connectionWindow = new DatabaseConnectionWindow();
-                if (connectionWindow.ShowDialog() == true)
-                {
+                    // Успешно подключились - открываем ОДНО главное окно
                     var mainWindow = new MainWindow();
                     mainWindow.Show();
+
+                    // НЕ создаем второе окно здесь!
                 }
                 else
                 {
+                    MessageBox.Show("Не удалось подключиться к базе данных. Приложение будет закрыто.");
                     Shutdown();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Критическая ошибка: {ex.Message}");
+                MessageBox.Show($"Критическая ошибка при запуске: {ex.Message}");
                 Shutdown();
             }
         }

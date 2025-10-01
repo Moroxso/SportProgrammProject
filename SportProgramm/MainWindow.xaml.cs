@@ -33,16 +33,6 @@ namespace SportProgramm
             FrmMain.Navigate(new Home());
         }
 
-        private void ButtonLogin(object sender, RoutedEventArgs e)
-        {
-            FrmMain.Navigate(new Login());
-        }
-
-        private void ButtonRegistrator(object sender, RoutedEventArgs e)
-        {
-            FrmMain.Navigate(new Registration());
-        }
-
         private void ButtonHome(object sender, RoutedEventArgs e)
         {
             FrmMain.Navigate(new Home());
@@ -57,5 +47,71 @@ namespace SportProgramm
         {
             FrmMain.Navigate(new RatingOfSportsMans());
         }
+
+        private void UpdateUserInterface()
+        {
+            if (CurrentUser.IsAuthenticated)
+            {
+                // Пользователь авторизован
+                UserInfoText.Text = CurrentUser.DisplayName;
+                UserInfoText.Visibility = Visibility.Visible;
+
+                LoginButton.Visibility = Visibility.Collapsed;
+                RegisterButton.Visibility = Visibility.Collapsed;
+                LogoutButton.Visibility = Visibility.Visible;
+
+                // Показываем админ-панель только админам
+                AdminButton.Visibility = CurrentUser.IsAdmin ? Visibility.Visible : Visibility.Collapsed;
+            }
+            else
+            {
+                // Пользователь не авторизован
+                UserInfoText.Visibility = Visibility.Collapsed;
+                AdminButton.Visibility = Visibility.Collapsed;
+
+                LoginButton.Visibility = Visibility.Visible;
+                RegisterButton.Visibility = Visibility.Visible;
+                LogoutButton.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        // Обработчик входа (перенаправляем на страницу входа)
+        private void ButtonLogin_Click(object sender, RoutedEventArgs e)
+        {
+            FrmMain.Navigate(new Login());
+        }
+
+        // Обработчик регистрации
+        private void ButtonRegistrator_Click(object sender, RoutedEventArgs e)
+        {
+            FrmMain.Navigate(new Registration());
+        }
+
+        // Обработчик выхода
+        private void ButtonLogout_Click(object sender, RoutedEventArgs e)
+        {
+            CurrentUser.User = null;
+            UpdateUserInterface();
+            FrmMain.Navigate(new Home());
+
+            MessageBox.Show("Вы успешно вышли из системы", "Выход",
+                           MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        // Обработчик админ-панели
+        private void ButtonAdmin_Click(object sender, RoutedEventArgs e)
+        {
+            if (CurrentUser.IsAdmin)
+            {
+                FrmMain.Navigate(new AdminPanel());
+            }
+        }
+
+        // Метод для обновления интерфейса из других страниц
+        public void RefreshUserInterface()
+        {
+            UpdateUserInterface();
+        }
+
     }
 }

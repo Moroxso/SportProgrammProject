@@ -1,10 +1,11 @@
-﻿using SportProgramm.BaseDate;
+﻿using SportProgramm;
+using SportProgramm.BaseDate;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SportProgramm;
+using System.Windows;
 
 namespace SportProgramm.Scripts
 {
@@ -12,7 +13,6 @@ namespace SportProgramm.Scripts
     {
         private static IDatabaseService _currentDatabaseService;
         public static DatabaseType CurrentDatabaseType { get; private set; }
-        public static event Action<string> ConnectionStatusChanged;
 
         public enum DatabaseType
         {
@@ -22,38 +22,44 @@ namespace SportProgramm.Scripts
 
         public static void Initialize()
         {
-            // Сначала пробуем подключиться к SQL Server
-            var sqlService = new SqlServerDatabaseService();
-            sqlService.Initialize();
-
-            if (sqlService.IsConnected)
+            // Пробуем разные типы баз данных в порядке приоритета
+            var databaseServices = new (IDatabaseService service, DatabaseType type)[]
             {
-                _currentDatabaseService = sqlService;
-                CurrentDatabaseType = DatabaseType.SqlServer;
-                ConnectionStatusChanged?.Invoke("Подключено к SQL Server");
-            }
-            else
-            {
-                // Если SQL Server недоступен, используем LocalDB
-                var localService = new LocalDatabaseService();
-                localService.Initialize();
+            (new SqlServerDatabaseService(), DatabaseType.SqlServer),
+            (new LocalDatabaseService(), DatabaseType.LocalDB)
+            };
 
-                if (localService.IsConnected)
+            foreach (var (service, type) in databaseServices)
+            {
+                try
                 {
-                    _currentDatabaseService = localService;
-                    CurrentDatabaseType = DatabaseType.LocalDB;
-                    ConnectionStatusChanged?.Invoke("Используется локальная база данных");
+                    service.Initialize();
+                    if (service.IsConnected)
+                    {
+                        _currentDatabaseService = service;
+                        CurrentDatabaseType = type;
+
+                        // ТИХОЕ подключение - без MessageBox
+                        System.Diagnostics.Debug.WriteLine($"Успешное подключение: {type}");
+                        return;
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    throw new Exception("Не удалось подключиться ни к одной базе данных");
+                    System.Diagnostics.Debug.WriteLine($"Ошибка {type}: {ex.Message}");
                 }
             }
+
+            throw new Exception("Не удалось подключиться ни к одной базе данных");
         }
 
         public static SportProgrammProjectEntities GetContext()
         {
-            return _currentDatabaseService?.GetContext();
+            if (_currentDatabaseService == null)
+            {
+                throw new InvalidOperationException("DatabaseManager не инициализирован.");
+            }
+            return _currentDatabaseService.Context;
         }
 
         public static bool IsConnected()
@@ -69,19 +75,6 @@ namespace SportProgramm.Scripts
         public static void RestoreFromBackup(string backupPath)
         {
             _currentDatabaseService?.RestoreFromBackup(backupPath);
-        }
-
-        public static void SwitchToLocalDB()
-        {
-            var localService = new LocalDatabaseService();
-            localService.Initialize();
-
-            if (localService.IsConnected)
-            {
-                _currentDatabaseService = localService;
-                CurrentDatabaseType = DatabaseType.LocalDB;
-                ConnectionStatusChanged?.Invoke("Переключено на локальную базу данных");
-            }
         }
     }
 }

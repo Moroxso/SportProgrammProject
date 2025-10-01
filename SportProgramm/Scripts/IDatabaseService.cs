@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SportProgramm.BaseDate;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,7 @@ namespace SportProgramm.Scripts
     public interface IDatabaseService
     {
         bool IsConnected { get; }
+        SportProgrammProjectEntities Context { get; }
         void Initialize();
         void TestConnection();
         void CreateBackup();

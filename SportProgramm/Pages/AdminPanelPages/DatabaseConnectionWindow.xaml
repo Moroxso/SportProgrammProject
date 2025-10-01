@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SportProgramm.Pages.AdminPanelPages"
         mc:Ignorable="d"
-        Title="DatabaseConnectionWindow" Height="450" Width="800">
+        Title="DatabaseConnectionWindow" Height="550" Width="800">
     <Border Style="{StaticResource AdminPanelStyle}" Margin="30">
         <StackPanel>
             <TextBlock Text="Настройка подключения" 
@@ -50,7 +50,7 @@
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 20">
                 <Button Content="Подключиться" Style="{StaticResource SuccessButtonStyle}"
-                        Click="Connect_Click" Width="120"/>
+                        Click="Connect_Click" Width="150"/>
                 <Button Content="Отмена" Style="{StaticResource AdminButtonStyle}" 
                         Background="#95a5a6" Click="Cancel_Click" 
                         Width="120" Margin="15 0 0 0"/>

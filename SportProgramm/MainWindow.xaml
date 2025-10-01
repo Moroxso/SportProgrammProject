@@ -42,8 +42,41 @@
 
                     <!-- Кнопки авторизации (справа) -->
                     <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center" Margin="10 0">
-                        <Button Style="{StaticResource AdaptiveMenuButton}" Content="Войти" Click="ButtonLogin"/>
-                        <Button Style="{StaticResource AdaptiveMenuButton}" Content="Регистрация" Click="ButtonRegistrator"/>
+                        <!-- Информация о пользователе -->
+                        <TextBlock x:Name="UserInfoText" 
+                                   Text="Гость" 
+                                   VerticalAlignment="Center" 
+                                   Margin="0 0 10 0" 
+                                   Foreground="#2c3e50" 
+                                   FontWeight="SemiBold"
+                                   Visibility="Collapsed"/>
+
+                        <!-- Кнопка админ-панели (только для админов) -->
+                        <Button x:Name="AdminButton" 
+                                Content="Админ-панель" 
+                                Style="{StaticResource AdaptiveMenuButton}"
+                                Click="ButtonAdmin_Click"
+                                Visibility="Collapsed"
+                                Margin="0 0 10 0"/>
+
+                        <!-- Кнопки для неавторизованных пользователей -->
+                        <Button x:Name="LoginButton" 
+                                Content="Войти" 
+                                Style="{StaticResource AdaptiveMenuButton}"
+                                Click="ButtonLogin_Click"/>
+                        <Button x:Name="RegisterButton" 
+                                Content="Регистрация" 
+                                Style="{StaticResource AdaptiveMenuButton}"
+                                Click="ButtonRegistrator_Click" 
+                                Margin="5 0 0 0"/>
+
+                        <!-- Кнопка выхода для авторизованных пользователей -->
+                        <Button x:Name="LogoutButton" 
+                                Content="Выйти" 
+                                Style="{StaticResource AdaptiveMenuButton}"
+                                Click="ButtonLogout_Click" 
+                                Margin="5 0 0 0"
+                                Visibility="Collapsed"/>
                     </StackPanel>
                 </Grid>
             </Border>

@@ -23,7 +23,5 @@ namespace SportProgramm.BaseDate
     
         public virtual Cup Cup { get; set; }
         public virtual Sportman Sportman { get; set; }
-
-        public virtual Sportman Player { get; set; }
     }
 }

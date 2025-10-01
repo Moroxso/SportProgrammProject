@@ -33,33 +33,41 @@ namespace SportProgramm.Pages
                 var userObj = AppConnect.model0db.Users.FirstOrDefault(x => x.Login == txbLogin.Text && x.Password == psbPassword.Password);
                 if (userObj == null)
                 {
-                    MessageBox.Show("Такого пользователя нет!", "Ошибка при авторизации",
+                    MessageBox.Show("Неверный логин или пароль!", "Ошибка авторизации",
                         MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
                 }
 
+                // Сохраняем пользователя в сессии
+                CurrentUser.User = userObj;
+
+                // Получаем главное окно для обновления интерфейса
+                var mainWindow = Application.Current.MainWindow as MainWindow;
+
+                string welcomeMessage = CurrentUser.IsAdmin
+                    ? $"Здравствуйте, администратор {userObj.Name}!"
+                    : $"Здравствуйте, пользователь {userObj.Name}!";
+
+                MessageBox.Show(welcomeMessage, "Успешный вход",
+                               MessageBoxButton.OK, MessageBoxImage.Information);
+
+                // Обновляем интерфейс главного окна
+                mainWindow?.RefreshUserInterface();
+
+                // Переходим на соответствующую страницу
+                if (CurrentUser.IsAdmin)
+                {
+                    AppFrame.frameMain.Navigate(new AdminPanel());
+                }
                 else
                 {
-                    switch (userObj.IdRole)
-                    {
-                        case 1:
-                            MessageBox.Show("Здравствуйте, администратор " + userObj.Name + "!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
-                            AppFrame.frameMain.Navigate(new AdminPanel());
-                            break;
-                        case 2:
-                            MessageBox.Show("Здравствуйте, пользователь " + userObj.Name + "!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
-                            AppFrame.frameMain.Navigate(new Home());
-                            break;
-                        default:
-                            MessageBox.Show("Данные не обнаружены!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Warning);
-                            AppFrame.frameMain.Navigate(new Home());
-                            break;
-                    }
+                    AppFrame.frameMain.Navigate(new Home());
                 }
             }
-
             catch (Exception Ex)
             {
-                MessageBox.Show("Ошибка " + Ex.Message.ToString() + "Критическая работа приложения!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show($"Ошибка авторизации: {Ex.Message}", "Ошибка",
+                               MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 

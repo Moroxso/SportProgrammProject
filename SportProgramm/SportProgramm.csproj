@@ -109,9 +109,10 @@
     <Compile Include="Pages\Tournaments.xaml.cs">
       <DependentUpon>Tournaments.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Scripts\CurrentUser.cs" />
+    <Compile Include="Scripts\DatabaseConfig.cs" />
     <Compile Include="Scripts\DataBaseConnect.cs" />
     <Compile Include="Scripts\DatabaseConnectionInfo.cs" />
-    <Compile Include="Scripts\DatabaseHelper.cs" />
     <Compile Include="Scripts\DatabaseManager.cs" />
     <Compile Include="Scripts\IDatabaseService.cs" />
     <Compile Include="Scripts\LocalDatabaseService.cs" />

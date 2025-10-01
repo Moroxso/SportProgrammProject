@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище SportProgrammProjectModelContainer" CdmEntityContainer="SportProgrammProjectEntities">
+    <EntitySetMapping Name="Cup">
+      <EntityTypeMapping TypeName="SportProgrammProjectModel.Cup">
+        <MappingFragment StoreEntitySet="Cup">
+          <ScalarProperty Name="IdSport" ColumnName="IdSport" />
+          <ScalarProperty Name="Place" ColumnName="Place" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="SportProgrammProjectModel.Roles">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sportman">
+      <EntityTypeMapping TypeName="SportProgrammProjectModel.Sportman">
+        <MappingFragment StoreEntitySet="Sportman">
+          <ScalarProperty Name="IdSport_5" ColumnName="IdSport_5" />
+          <ScalarProperty Name="IdSport_4" ColumnName="IdSport_4" />
+          <ScalarProperty Name="IdSport_3" ColumnName="IdSport_3" />
+          <ScalarProperty Name="IdSport_2" ColumnName="IdSport_2" />
+          <ScalarProperty Name="IdSport_1" ColumnName="IdSport_1" />
+          <ScalarProperty Name="Lvl" ColumnName="Lvl" />
+          <ScalarProperty Name="Team" ColumnName="Team" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sports">
+      <EntityTypeMapping TypeName="SportProgrammProjectModel.Sports">
+        <MappingFragment StoreEntitySet="Sports">
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Record" ColumnName="Record" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TournamentResults">
+      <EntityTypeMapping TypeName="SportProgrammProjectModel.TournamentResults">
+        <MappingFragment StoreEntitySet="TournamentResults">
+          <ScalarProperty Name="Points" ColumnName="Points" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="IdPlayer" ColumnName="IdPlayer" />
+          <ScalarProperty Name="IdCup" ColumnName="IdCup" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="SportProgrammProjectModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="IdRole" ColumnName="IdRole" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
