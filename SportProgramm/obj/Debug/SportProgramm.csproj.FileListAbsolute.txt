@@ -107,3 +107,5 @@ C:\Users\ckuzi\Documents\GitHub\SportProgrammProject\SportProgramm\obj\Debug\Pag
 C:\Users\ckuzi\Documents\GitHub\SportProgrammProject\SportProgramm\obj\Debug\Pages\AdminPanelPages\ManageTournamentParticipantsWindow.baml
 C:\Users\ckuzi\Documents\GitHub\SportProgrammProject\SportProgramm\obj\Debug\Pages\SportsmanProfilePage.baml
 C:\Users\ckuzi\Documents\GitHub\SportProgrammProject\SportProgramm\obj\Debug\Pages\TournamentDetailsPage.baml
+C:\Users\user\Documents\GitHub\SportProgrammProject\SportProgramm\obj\Debug\Pages\AdminPanelPages\DatabaseConnectionWindow.g.cs
+C:\Users\user\Documents\GitHub\SportProgrammProject\SportProgramm\obj\Debug\Pages\AdminPanelPages\DatabaseConnectionWindow.baml

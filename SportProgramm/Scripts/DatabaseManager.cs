@@ -22,44 +22,33 @@ namespace SportProgramm.Scripts
 
         public static void Initialize()
         {
-            // Пробуем разные типы баз данных в порядке приоритета
-            var databaseServices = new (IDatabaseService service, DatabaseType type)[]
+            try
             {
-            (new SqlServerDatabaseService(), DatabaseType.SqlServer),
-            (new LocalDatabaseService(), DatabaseType.LocalDB)
-            };
+                // Просто используем LocalDatabaseService - он сам разберется
+                var localService = new LocalDatabaseService();
+                localService.Initialize();
 
-            foreach (var (service, type) in databaseServices)
-            {
-                try
+                if (localService.IsConnected)
                 {
-                    service.Initialize();
-                    if (service.IsConnected)
-                    {
-                        _currentDatabaseService = service;
-                        CurrentDatabaseType = type;
+                    _currentDatabaseService = localService;
+                    CurrentDatabaseType = DatabaseType.LocalDB;
+                    return;
+                }
 
-                        // ТИХОЕ подключение - без MessageBox
-                        System.Diagnostics.Debug.WriteLine($"Успешное подключение: {type}");
-                        return;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    System.Diagnostics.Debug.WriteLine($"Ошибка {type}: {ex.Message}");
-                }
+                throw new Exception("Не удалось подключиться к базе данных");
             }
-
-            throw new Exception("Не удалось подключиться ни к одной базе данных");
+            catch (Exception ex)
+            {
+                // Показываем сообщение об ошибке
+                MessageBox.Show(ex.Message, "Ошибка базы данных",
+                              MessageBoxButton.OK, MessageBoxImage.Error);
+                throw;
+            }
         }
 
         public static SportProgrammProjectEntities GetContext()
         {
-            if (_currentDatabaseService == null)
-            {
-                throw new InvalidOperationException("DatabaseManager не инициализирован.");
-            }
-            return _currentDatabaseService.Context;
+            return _currentDatabaseService?.Context;
         }
 
         public static bool IsConnected()

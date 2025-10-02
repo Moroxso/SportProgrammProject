@@ -30,6 +30,15 @@ namespace SportProgramm
             AppConnect.model0db = new SportProgrammProjectEntities();
             AppFrame.frameMain = FrmMain;
 
+            if (!DatabaseManager.IsConnected())
+            {
+                MessageBox.Show("Ошибка подключения к базе данных");
+                Close();
+                return;
+            }
+
+            UpdateUserInterface();
+
             FrmMain.Navigate(new Home());
         }
 

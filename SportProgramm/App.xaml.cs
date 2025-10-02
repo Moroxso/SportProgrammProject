@@ -23,28 +23,18 @@ namespace SportProgramm
 
             try
             {
-                // Инициализируем базу данных БЕЗ показа сообщений
+                // Просто инициализируем базу данных
                 DatabaseManager.Initialize();
 
-                if (DatabaseManager.IsConnected())
-                {
-                    // Успешно подключились - открываем ОДНО главное окно
-                    var mainWindow = new MainWindow();
-                    mainWindow.Show();
-
-                    // НЕ создаем второе окно здесь!
-                }
-                else
-                {
-                    MessageBox.Show("Не удалось подключиться к базе данных. Приложение будет закрыто.");
-                    Shutdown();
-                }
+                // Если добрались сюда - подключение успешно
+                // Главное окно создастся автоматически через StartupUri
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show($"Критическая ошибка при запуске: {ex.Message}");
+                // Если произошла ошибка - приложение закроется
                 Shutdown();
             }
         }
     }
 }
+
